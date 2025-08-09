@@ -1,4 +1,4 @@
-import MyProject.Monoid.Defs
+import MyProject.Defs
 
 /-!
 # Finiteness in Semigroups

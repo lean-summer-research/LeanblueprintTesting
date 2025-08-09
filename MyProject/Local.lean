@@ -1,4 +1,4 @@
-import MyProject.Monoid.Finite
+import MyProject.Finite
 
 /-!
 # Local Theory
