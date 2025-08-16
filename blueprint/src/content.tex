@@ -5,20 +5,27 @@
 % If you want to split the blueprint content into several files then
 % the current file can be a simple sequence of \input. Otherwise It
 % can start with a \section or \chapter for instance.
-\section{Green's preorders on a monoid}
+
+
+% Main blueprint content for Green's relations and MulOpposite duality.
+% This file is included by both the web and print versions of the blueprint
+% via web.tex and print.tex.
+
+\section{Green's preorders (from \texttt{MyProject/GreensRelations.lean})}
 
 \begin{definition}[Green's \(R\)-preorder]
 \label{def:RRel}
-Let \(M\) be a monoid and let \(x,y\in M\).  We write \(x \le_R y\) if there exists \(z\in M\)
-such that \(x\cdot z = y\).  This defines a reflexive and transitive relation on \(M\).
-\lean{Green.RRel}
+Let \(M\) be a monoid and \(x,y\in M\).
+We define \(x \le_R y\) iff there exists \(z\in M\) with \(x\cdot z = y\).
+This relation is reflexive and transitive.
+\lean{RRel}
 \leanok
 \end{definition}
 
 \begin{lemma}[Reflexivity of \(\le_R\)]
 \label{lem:RRel-refl}
-For every \(x\in M\) we have \(x \le_R x\).
-\lean{Green.RRel.refl}
+For every \(x\in M\), \(x \le_R x\).
+\lean{RRel.refl}
 \leanok
 \uses{def:RRel}
 \end{lemma}
@@ -26,25 +33,47 @@ For every \(x\in M\) we have \(x \le_R x\).
 \begin{lemma}[Transitivity of \(\le_R\)]
 \label{lem:RRel-trans}
 If \(x \le_R y\) and \(y \le_R z\), then \(x \le_R z\).
-\lean{Green.RRel.trans}
+\lean{RRel.trans}
 \leanok
 \uses{def:RRel}
 \end{lemma}
 
-\section{Duality via \texttt{MulOpposite}}
+% If you have LRel in the same file, you can uncomment this block.
+% \begin{definition}[Green's \(L\)-preorder]
+% \label{def:LRel}
+% For \(x,y\in M\), \(x \le_L y\) iff \(\exists z,\, z\cdot x = y\).
+% \lean{LRel}
+% \leanok
+% \end{definition}
 
-We consider the relation induced on the opposite monoid \(M^{\mathrm{op}}\).
+\section{Duality via \texttt{MulOpposite} (from \texttt{MyProject/MulOpposite.lean})}
 
-\begin{lemma}[Relation on the opposite monoid]
+\begin{lemma}[Opposite monoid correspondence for \(R\)]
 \label{lem:RRel-op-iff}
-For \(x,y\in M\), we have
+For \(x,y\in M\),
 \[
-  \Green.RRel\;(\mathrm{op}\, x)\;(\mathrm{op}\, y)
-  \iff \Green.RRel\;x\;y.
+  RRel(\mathrm{op}\,x,\mathrm{op}\,y)\ \iff\ RRel(x,y).
 \]
-In other words, the \(R\)-preorder on \(M\) corresponds to the \(R\)-preorder on 
-\(\mathrm{MulOpposite}\,M\) under \(\mathrm{op}\).
+Equivalently, the \(R\)-preorder on \(M\) corresponds to the \(R\)-preorder on
+\(\mathrm{MulOpposite}\,M\) via \(\mathrm{op}\).
 \lean{RRel.op_iff}
 \leanok
 \uses{def:RRel, lem:RRel-refl, lem:RRel-trans}
 \end{lemma}
+
+% If you proved one-directional rewrite lemmas, you can document them here.
+% Keep them commented out if you haven't defined these names in Lean.
+
+% \begin{lemma}[Pushing into \texttt{MulOpposite}]
+% \label{lem:RRel-toOpp}
+% If \(RRel(x,y)\) then \(RRel(\mathrm{op}\,x,\mathrm{op}\,y)\).
+% \lean{toOpp_RRel}
+% \uses{def:RRel, lem:RRel-op-iff}
+% \end{lemma}
+
+% \begin{lemma}[Pulling out of \texttt{MulOpposite}]
+% \label{lem:RRel-fromOpp}
+% If \(RRel(\mathrm{op}\,x,\mathrm{op}\,y)\) then \(RRel(x,y)\).
+% \lean{fromOpp_RRel}
+% \uses{def:RRel, lem:RRel-op-iff}
+% \end{lemma}
