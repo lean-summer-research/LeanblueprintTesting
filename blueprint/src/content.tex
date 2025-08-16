@@ -5,3 +5,46 @@
 % If you want to split the blueprint content into several files then
 % the current file can be a simple sequence of \input. Otherwise It
 % can start with a \section or \chapter for instance.
+\section{Green's preorders on a monoid}
+
+\begin{definition}[Green's \(R\)-preorder]
+\label{def:RRel}
+Let \(M\) be a monoid and let \(x,y\in M\).  We write \(x \le_R y\) if there exists \(z\in M\)
+such that \(x\cdot z = y\).  This defines a reflexive and transitive relation on \(M\).
+\lean{Green.RRel}
+\leanok
+\end{definition}
+
+\begin{lemma}[Reflexivity of \(\le_R\)]
+\label{lem:RRel-refl}
+For every \(x\in M\) we have \(x \le_R x\).
+\lean{Green.RRel.refl}
+\leanok
+\uses{def:RRel}
+\end{lemma}
+
+\begin{lemma}[Transitivity of \(\le_R\)]
+\label{lem:RRel-trans}
+If \(x \le_R y\) and \(y \le_R z\), then \(x \le_R z\).
+\lean{Green.RRel.trans}
+\leanok
+\uses{def:RRel}
+\end{lemma}
+
+\section{Duality via \texttt{MulOpposite}}
+
+We consider the relation induced on the opposite monoid \(M^{\mathrm{op}}\).
+
+\begin{lemma}[Relation on the opposite monoid]
+\label{lem:RRel-op-iff}
+For \(x,y\in M\), we have
+\[
+  \Green.RRel\;(\mathrm{op}\, x)\;(\mathrm{op}\, y)
+  \iff \Green.RRel\;x\;y.
+\]
+In other words, the \(R\)-preorder on \(M\) corresponds to the \(R\)-preorder on 
+\(\mathrm{MulOpposite}\,M\) under \(\mathrm{op}\).
+\lean{RRel.op_iff}
+\leanok
+\uses{def:RRel, lem:RRel-refl, lem:RRel-trans}
+\end{lemma}
