@@ -1,4 +1,4 @@
-import MyProject.Monoid.Local
+import MyProject.MulOpposite
 
 /-!
 # Style Guidelines
@@ -79,7 +79,7 @@ or to group together a definition and notation.
 @[simp] lemma RLE.refl (x : M) : x ≤𝓡 x := by use 1; simp
 @[simp] lemma LLE.refl (x : M) : x ≤𝓛 x := by use 1; simp
 @[simp] lemma JLE.refl (x : M) : x ≤𝓙 x := by use 1, 1; simp
-@[simp] lemma HLE.refl (x : M) : x ≤𝓗 x := by simp [HLE]
+@[simp] lemma HLE.refl (x : M) : x ≤𝓗 x := by simp [HRel]
 
 /-!
 ### Instances
@@ -87,9 +87,9 @@ or to group together a definition and notation.
 When providing terms of structures or instances of classes, the `where` syntax
 should be used to avoid the need for enclosing braces, as in: -/
 
-instance RLE.isPreorder : IsPreorder M RLE where
-  refl := RLE.refl
-  trans := by intros x y z h₁ h₂; apply RLE.trans h₁ h₂
+instance RLE.isPreorder : IsPreorder M RRel where
+  refl := RRel.refl
+  trans := by intros x y z h₁ h₂; apply RRel.trans h₁ h₂
 
 /-!
 ### Hypotheses Left of Colon
@@ -115,11 +115,11 @@ the squaring function. However, sometimes it is necessary to refer to the argume
 pretty printer displays `↦`, and we slightly prefer this in the source as well.
 
 Example: -/
-
+/-
 instance REquiv.isEquiv : Equivalence (fun x y : M => x 𝓡 y) := by
   unfold REquiv
-  exact @EquivOfLE.isEquiv M RLE _
-
+  exact EquivOfLE.isEquiv M RRel _
+-/
 /-!
 ### Tactic Mode
 

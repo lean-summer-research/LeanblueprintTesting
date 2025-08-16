@@ -1,4 +1,4 @@
-import MyProject.Local
+import MyProject.MulOpposite
 
 /-!
 # Project Naming Conventions
@@ -163,7 +163,7 @@ Sometimes, to disambiguate the name of theorem or better convey the intended
 reference, it is necessary to describe some of the hypotheses.
 The word "of" is used to separate these hypotheses: -/
 
-#check HEquiv.of_rEquiv_and_lEquiv
+-- #check HEquiv.of_rEquiv_and_lEquiv
 
 --Mathlib examples:
 open Nat
@@ -210,10 +210,12 @@ Places where projection (dot) notation is useful, for example: -/
 
 -- Our examples:
 #check REquiv.trans
+/-
 #check HEquiv.to_rEquiv
 #check LLE.to_jLE
 #check REquiv.op_iff
 #check JEquiv.isEquiv
+-/
 
 -- Mathlib examples:
 #check And.comm
