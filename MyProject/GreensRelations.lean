@@ -23,8 +23,6 @@ preorders, construct the associated equivalence relations, and provide basic
 lemmas for working with them.
 -/
 
-namespace Green
-
 /-! ## Preorders -/
 
 section Preorders
@@ -335,7 +333,7 @@ lemma LRel.idempotent_iff (h : IsIdempotentElem e) :
     exact hx
 
 /-- ### H-Equivalence charactarization -/
-theorem HEquiv.rEquiv_and_lEquiv_iff : x 𝓡 y ∧ x 𝓛 y ↔ x 𝓗 y := by
+theorem HEquiv.iff : x 𝓗 y ↔ x 𝓡 y ∧ x 𝓛 y := by
   simp [HEquiv, REquiv, LEquiv, HRel]
   aesop
 
@@ -552,14 +550,22 @@ section EquivalenceClasses
 
 variable {M : Type*} [Monoid M] (x : M)
 
-@[simp] def REquiv.set : Set M := {y | y 𝓡 x}
-@[simp] def LEquiv.set : Set M := {y | y 𝓛 x}
-@[simp] def JEquiv.set : Set M := {y | y 𝓙 x}
-@[simp] def HEquiv.set : Set M := {y | y 𝓗 x}
-@[simp] def DEquiv.set : Set M := {y | y 𝓓 x}
+@[simp] def RClass : Set M := {y | y 𝓡 x}
+@[simp] def LClass : Set M := {y | y 𝓛 x}
+@[simp] def JClass : Set M := {y | y 𝓙 x}
+@[simp] def HCLass : Set M := {y | y 𝓗 x}
+@[simp] def DClass : Set M := {y | y 𝓓 x}
 
-notation "⟦" x "⟧𝓡" => REquiv.set x
-notation "⟦" x "⟧𝓛" => LEquiv.set x
-notation "⟦" x "⟧𝓙" => JEquiv.set x
-notation "⟦" x "⟧𝓗" => HEquiv.set x
-notation "⟦" x "⟧𝓓" => DEquiv.set x
+notation "⟦" x "⟧𝓡" => RClass x
+notation "⟦" x "⟧𝓛" => LClass x
+notation "⟦" x "⟧𝓙" => JClass x
+notation "⟦" x "⟧𝓗" => HCLass x
+notation "⟦" x "⟧𝓓" => DClass x
+
+/-!
+### Registration of Simp sets
+This must be done in this file because lean does not allow you to register
+and populate a simp set in the same file.
+-/
+
+register_simp_attr fromOpp
