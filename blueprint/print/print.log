@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.8.16)  18 AUG 2025 20:54
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.8.16)  18 AUG 2025 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -709,15 +709,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ] (./content.tex
-(../../LaTeX/Preorders.tex
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7.
-
-Overfull \hbox (21.45016pt too wide) in paragraph at lines 7--7
-[]\TU/lmr/bx/n/14.4 Green’s preorders (from \TU/lmtt/b/n/14.4 MyProject/GreensR
-elations.lean\TU/lmr/bx/n/14.4 ) 
- []
-
+Chapter 1.
+(./LaTeX/GreensRelations/Preorders.tex
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 10.00107pt on input line 10.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
@@ -730,19 +723,28 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 10.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 10.
-) (../../LaTeX/Equiv.tex)) [1]
+ [1
+
+])
+(./LaTeX/GreensRelations/EquivOfPreorder.tex)
+(./LaTeX/GreensRelations/Equiv.tex [2])
+(./LaTeX/GreensRelations/Cancellation.tex [3])
+(./LaTeX/GreensRelations/Idempotent.tex)
+(./LaTeX/GreensRelations/RLMulCompat.tex [4])
+(./LaTeX/GreensRelations/RLComm.tex [5]) (./LaTeX/GreensRelations/DEquiv.tex
+[6]) (./LaTeX/GreensRelations/EquivClass.tex)) [7]
 (/workspaces/LeanblueprintTesting/blueprint/print/print.aux)
 Package rerunfilecheck Info: File `print.out' has not changed.
-(rerunfilecheck)             Checksum: 64F3D10ED131B6AF2760C512A347B863;335.
+(rerunfilecheck)             Checksum: 31B35DD8D6463B91A4573CCA5857D295;1824.
  ) 
 Here is how much of TeX's memory you used:
- 16558 strings out of 478190
- 307877 string characters out of 5854827
- 792831 words of memory out of 5000000
- 36954 multiletter control sequences out of 15000+600000
- 474598 words of font info for 73 fonts, out of 8000000 for 9000
+ 16666 strings out of 478190
+ 310887 string characters out of 5854827
+ 819831 words of memory out of 5000000
+ 37033 multiletter control sequences out of 15000+600000
+ 474646 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,6n,115p,366b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,6n,115p,845b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /workspaces/LeanblueprintTesting/blueprint/print/print.pdf (2
+Output written on /workspaces/LeanblueprintTesting/blueprint/print/print.pdf (8
  pages).
