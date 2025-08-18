@@ -93,40 +93,6 @@
 
 
     
-    <div class="dep-modal-container" id="lem:RRel-op-iff_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="lem:RRel-op-iff" style="display: none">
-    <div class="thm_thmheading">
-      <span class="lemma_thmcaption">
-      Lemma
-      </span>
-      <span class="lemma_thmlabel">4</span><span class="lemma_thmtitle">Opposite monoid correspondence for \(R\)</span></div>
-    <div class="thm_thmcontent"><p>  For \(x,y\in M\), </p>
-<div class="displaymath" id="a0000000004">
-  \[  RRel(\mathrm{op}\, x,\mathrm{op}\, y)\  \iff \  RRel(x,y).  \]
-</div>
-<p> Equivalently, the \(R\)-preorder on \(M\) corresponds to the \(R\)-preorder on \(\mathrm{MulOpposite}\, M\) via \(\mathrm{op}\).   </p>
-</div>
-
-    <a class="latex_link" href="index.html#lem:RRel-op-iff">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://lean-summer-research.github.io/LeanblueprintTesting/docs/find/#doc/RRel.op_iff">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
     <div class="dep-modal-container" id="lem:RRel-refl_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -154,36 +120,6 @@
     
       </div>
     </div>
-
-
-    
-    <div class="dep-modal-container" id="lem:RRel-trans_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="lem:RRel-trans" style="display: none">
-    <div class="thm_thmheading">
-      <span class="lemma_thmcaption">
-      Lemma
-      </span>
-      <span class="lemma_thmlabel">3</span><span class="lemma_thmtitle">Transitivity of \(\le _R\)</span></div>
-    <div class="thm_thmcontent"><p>  If \(x \le _R y\) and \(y \le _R z\), then \(x \le _R z\).   </p>
-</div>
-
-    <a class="latex_link" href="index.html#lem:RRel-trans">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://lean-summer-research.github.io/LeanblueprintTesting/docs/find/#doc/RRel.trans">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
 </div>
 </div> <!-- content -->
 </div> <!-- wrapper -->
@@ -203,7 +139,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:RRel"	[color=green,		fillcolor="#B0ECA3",		label=RRel,		shape=box,		style=filled];	"lem:RRel-refl"	[color=green,		label="RRel-refl",		shape=ellipse];	"def:RRel" -> "lem:RRel-refl"	[style=dashed];	"lem:RRel-trans"	[color=green,		label="RRel-trans",		shape=ellipse];	"def:RRel" -> "lem:RRel-trans"	[style=dashed];	"lem:RRel-op-iff"	[color=green,		label="RRel-op-iff",		shape=ellipse];	"lem:RRel-refl" -> "lem:RRel-op-iff"	[style=dashed];	"lem:RRel-trans" -> "lem:RRel-op-iff"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:RRel"	[color=green,		fillcolor="#B0ECA3",		label=RRel,		shape=box,		style=filled];	"lem:RRel-refl"	[color=green,		fillcolor="#1CAC78",		label="RRel-refl",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:RRel-refl"	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {
