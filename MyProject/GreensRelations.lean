@@ -559,7 +559,7 @@ variable {M : Type*} [Monoid M] (x : M)
 notation "⟦" x "⟧𝓡" => RClass x
 notation "⟦" x "⟧𝓛" => LClass x
 notation "⟦" x "⟧𝓙" => JClass x
-notation "⟦" x "⟧𝓗" => HCLass x
+notation "⟦" x "⟧𝓗" => HClass x
 notation "⟦" x "⟧𝓓" => DClass x
 
 /-!
