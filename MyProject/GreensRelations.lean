@@ -553,7 +553,7 @@ variable {M : Type*} [Monoid M] (x : M)
 @[simp] def RClass : Set M := {y | y 𝓡 x}
 @[simp] def LClass : Set M := {y | y 𝓛 x}
 @[simp] def JClass : Set M := {y | y 𝓙 x}
-@[simp] def HCLass : Set M := {y | y 𝓗 x}
+@[simp] def HClass : Set M := {y | y 𝓗 x}
 @[simp] def DClass : Set M := {y | y 𝓓 x}
 
 notation "⟦" x "⟧𝓡" => RClass x
