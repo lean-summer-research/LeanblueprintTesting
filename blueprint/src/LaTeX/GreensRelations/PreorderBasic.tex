@@ -1,0 +1,80 @@
+\section{Basic Preorder Properties}
+
+% === Combined "multiplication decreases" lemma (replaces the three separate entries) ===
+\begin{lemma}[Multiplication decreases for \(\le_{\mathcal R},\le_{\mathcal L},\le_{\mathcal J}\)]
+\label{lem:mul-decreases-all}
+For all \(M\) a monoid and \(x,y,u,v\in M\), the following hold:
+\begin{itemize}
+  \item \(\mathbf{(R)}\) \(x\cdot y \le_{\mathcal R} x\).
+  \item \(\mathbf{(L)}\) \(y\cdot x \le_{\mathcal L} x\).
+  \item \(\mathbf{(J)}\) \(u\cdot x\cdot v \le_{\mathcal J} x\).
+\end{itemize}
+\lean{RRel.mul_right_self, LRel.mul_left_self, JRel.mul_sandwich_self}
+\leanok
+\uses{def:RRel, def:LRel, def:JRel}
+\end{lemma}
+\begin{proof}
+\leanok
+\begin{itemize}
+  \item \textbf{(R)} By definition of \(\le_{\mathcal R}\), we need \(u\) with \(x\cdot u = x\cdot y\). Take \(u:=y\).
+  \item \textbf{(L)} By definition of \(\le_{\mathcal L}\), we need \(u\) with \(u\cdot x = y\cdot x\). Take \(u:=y\).
+  \item \textbf{(J)} By definition of \(\le_{\mathcal J}\), we need \(s,t\) with \(s\cdot x\cdot t = u\cdot x\cdot v\). Take \(s:=u\), \(t:=v\).
+\end{itemize}
+\end{proof}
+
+% === Combined "cancellation" lemma (replaces the four separate entries) ===
+\begin{lemma}[Cancellation for \(\le_{\mathcal J},\le_{\mathcal R},\le_{\mathcal L}\)]
+\label{lem:cancellation-all}
+Let \(M\) be a monoid and \(x,y,z\in M\).
+\begin{itemize}
+  \item \(\mathbf{(J\text{-}L)}\) If \(x \le_{\mathcal J} y\cdot z\), then \(x \le_{\mathcal J} z\).
+  \item \(\mathbf{(J\text{-}R)}\) If \(x \le_{\mathcal J} y\cdot z\), then \(x \le_{\mathcal J} y\).
+  \item \(\mathbf{(R\text{-}R)}\) If \(x \le_{\mathcal R} y\cdot z\), then \(x \le_{\mathcal R} y\).
+  \item \(\mathbf{(L\text{-}L)}\) If \(x \le_{\mathcal L} y\cdot z\), then \(x \le_{\mathcal L} z\).
+\end{itemize}
+\lean{JRel.left_cancel, JRel.right_cancel, RRel.right_cancel, LRel.left_cancel}
+\leanok
+\uses{def:JRel, def:RRel, def:LRel}
+\end{lemma}
+\begin{proof}
+\leanok
+\begin{itemize}
+  \item \textbf{(J–L)} From \(x \le_{\mathcal J} y z\), pick \(u,v\) with \(u\cdot (y z)\cdot v = x\). By associativity,
+        \((u y)\cdot z\cdot v = x\). Set \(u':=u y\), \(v':=v\). Then \(x \le_{\mathcal J} z\).
+  \item \textbf{(J–R)} From \(x \le_{\mathcal J} y z\), pick \(u,v\) with \(u\cdot (y z)\cdot v = x\). By associativity,
+        \(u\cdot y\cdot (z v) = x\). Set \(u':=u\), \(v':=z v\). Then \(x \le_{\mathcal J} y\).
+  \item \textbf{(R–R)} From \(x \le_{\mathcal R} y z\), pick \(u\) with \((y z)\cdot u = x\). By associativity,
+        \(y\cdot (z u) = x\). Set \(u':=z u\). Then \(x \le_{\mathcal R} y\).
+  \item \textbf{(L–L)} From \(x \le_{\mathcal L} y z\), pick \(u\) with \(u\cdot (y z) = x\). By associativity,
+        \((u y)\cdot z = x\). Set \(u':=u y\). Then \(x \le_{\mathcal L} z\).
+\end{itemize}
+\end{proof}
+
+\begin{lemma}[Idempotent characterizations for \(\le_{\mathcal R}\) and \(\le_{\mathcal L}\)]
+\label{lem:RLRel-idempotent_iff}
+Let \(M\) be a monoid and let \(e\in M\) be idempotent \((e\cdot e = e)\). For any \(x\in M\),
+\[
+\text{\bf(R)}\quad x \le_{\mathcal R} e \;\Longleftrightarrow\; e\cdot x = x,
+\qquad
+\text{\bf(L)}\quad x \le_{\mathcal L} e \;\Longleftrightarrow\; x\cdot e = x.
+\]
+\lean{RRel.idempotent_iff, LRel.idempotent_iff}
+\leanok
+\uses{def:RRel, def:LRel}
+\end{lemma}
+\begin{proof}
+\leanok
+Assume \(e^2=e\).
+\begin{itemize}
+  \item \textbf{(R)}  
+    \emph{(\(\Rightarrow\))} If \(x \le_{\mathcal R} e\), pick \(t\) with \(e\cdot t = x\). Then
+    \(e\cdot x = e\cdot(e\cdot t) = (e\cdot e)\cdot t = e\cdot t = x\).
+    \emph{(\(\Leftarrow\))} If \(e\cdot x = x\), take \(t:=x\); then \(e\cdot t = x\), so \(x \le_{\mathcal R} e\).
+  \item \textbf{(L)}  
+    \emph{(\(\Rightarrow\))} If \(x \le_{\mathcal L} e\), pick \(t\) with \(t\cdot e = x\). Then
+    \(x\cdot e = (t\cdot e)\cdot e = t\cdot(e\cdot e) = t\cdot e = x\).
+    \emph{(\(\Leftarrow\))} If \(x\cdot e = x\), take \(t:=x\); then \(t\cdot e = x\), so \(x \le_{\mathcal L} e\).
+\end{itemize}
+\end{proof}
+
+

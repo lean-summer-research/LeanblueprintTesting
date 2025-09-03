@@ -1,10 +1,10 @@
 \section{Equivalence classes}
 
-Green's equivalence relations partition a monoid into subsets called equivalence classes.  Concretely, given an element \(a\in M\), the \(R\)-class of \(a\) is the set of all \(x\) such that \(x \mathrel{REquiv} a\).  Similarly for \(L\), \(J\), \(H\) and \(D\).
+Green's equivalence relations partition a monoid into subsets called equivalence classes.  Concretely, given an element \(a\in M\), the \(\mathcal R\)-class of \(a\) is the set of all \(x\) such that \(x \,\mathcal R\, a\).  Similarly for \(\mathcal L, \mathcal J, \mathcal H\) and \(\mathcal D\).
 
 \begin{definition}[Right class]
 \label{def:RClass}
-For \(a\in M\) we define \(\mathrm{RClass}(a)\) to be the set \(\{x\in M \mid x \mathrel{REquiv} a\}\).
+For \(a\in M\) we define \(\mathrm{RClass}(a)\) to be the set \(\{x\in M \mid x \,\mathcal R\, a\}\).
 \lean{RClass}
 \leanok
 \uses{def:REquiv}
@@ -12,7 +12,7 @@ For \(a\in M\) we define \(\mathrm{RClass}(a)\) to be the set \(\{x\in M \mid x 
 
 \begin{definition}[Left class]
 \label{def:LClass}
-For \(a\in M\) we define \(\mathrm{LClass}(a)\) to be the set \(\{x\in M \mid x \mathrel{LEquiv} a\}\).
+For \(a\in M\) we define \(\mathrm{LClass}(a)\) to be the set \(\{x\in M \mid x \,\mathcal L\, a\}\).
 \lean{LClass}
 \leanok
 \uses{def:LEquiv}
@@ -20,7 +20,7 @@ For \(a\in M\) we define \(\mathrm{LClass}(a)\) to be the set \(\{x\in M \mid x 
 
 \begin{definition}[J class]
 \label{def:JClass}
-For \(a\in M\) we define \(\mathrm{JClass}(a)\) to be the set \(\{x\in M \mid x \mathrel{JEquiv} a\}\).
+For \(a\in M\) we define \(\mathrm{JClass}(a)\) to be the set \(\{x\in M \mid x \,\mathcal J\, a\}\).
 \lean{JClass}
 \leanok
 \uses{def:JEquiv}
@@ -28,7 +28,7 @@ For \(a\in M\) we define \(\mathrm{JClass}(a)\) to be the set \(\{x\in M \mid x 
 
 \begin{definition}[H class]
 \label{def:HClass}
-For \(a\in M\) we define \(\mathrm{HClass}(a)\) to be the set \(\{x\in M \mid x \mathrel{HEquiv} a\}\).
+For \(a\in M\) we define \(\mathrm{HClass}(a)\) to be the set \(\{x\in M \mid x \,\mathcal H\, a\}\).
 \lean{HClass}
 \leanok
 \uses{def:HEquiv}
@@ -36,7 +36,7 @@ For \(a\in M\) we define \(\mathrm{HClass}(a)\) to be the set \(\{x\in M \mid x 
 
 \begin{definition}[D class]
 \label{def:DClass}
-For \(a\in M\) we define \(\mathrm{DClass}(a)\) to be the set \(\{x\in M \mid \mathrm{DEquiv}\,x\,a\}\).
+For \(a\in M\) we define \(\mathrm{DClass}(a)\) to be the set \(\{x\in M \mid x \,\mathcal D\, a\}\).
 \lean{DClass}
 \leanok
 \uses{def:DEquiv}

@@ -2,101 +2,90 @@
 
 \begin{definition}[D-equivalence]
 \label{def:DEquiv}
-Let \(M\) be a monoid.  For \(x,y\in M\) we say \(\mathrm{DEquiv}\,x\,y\) holds if there exists an element \(z\in M\) such that \(x\) is right equivalent to \(z\) and \(z\) is left equivalent to \(y\).  In other words, there is a chain \(x \mathrel{REquiv} z\) and \(z \mathrel{LEquiv} y\).  This relation is Green's \(D\)-equivalence.
+Let \(M\) be a monoid. For \(x,y\in M\) we say \(x \,\mathcal D\, y\) holds if there exists \(z\in M\) such that
+\(x \,\mathcal R\, z\) and \(z \,\mathcal L\, y\).
+Equivalently, there is a chain \(x \,\mathcal R\, z\) and \(z \,\mathcal L\, y\).
 \lean{DEquiv}
 \leanok
 \end{definition}
 
-\begin{lemma}[Characterization of \(\mathrm{DEquiv}\)]
-\label{lem:DEquiv-comm}
-For all \(x,y\in M\) we have
+
+\begin{lemma}[D-equivalence symmetry]
+\label{lem:DEquiv-comm-symm}
+For all \(x,y\in M\),
 \[
-  (\exists z\in M,\; x \mathrel{REquiv} z \land z \mathrel{LEquiv} y)\quad\Longleftrightarrow\quad \mathrm{DEquiv}\,x\,y.
+ x \,\mathcal D\, y
+\;\Longleftrightarrow\;
+ (\exists z,\; x \,\mathcal R\, z \land z \,\mathcal L\, y)
+\;\Longleftrightarrow\;
+ (\exists w,\; y \,\mathcal R\, w \land w \,\mathcal L\, x),
 \]
-\lean{DEquiv.comm}
+and in particular \(x \,\mathcal D\, y \Rightarrow y \,\mathcal D\, x\).
+\lean{DEquiv.comm, DEquiv.symm}
 \leanok
 \uses{def:DEquiv, def:REquiv, def:LEquiv, lem:rEquiv_lEquiv_comm}
 \end{lemma}
 \begin{proof}
 \leanok
-Unwinding Definition~\ref{def:DEquiv}, \(\mathrm{DEquiv}\,x\,y\) holds exactly when there is a \(z\) with \(x\) right equivalent to \(z\) and \(z\) left equivalent to \(y\).  This is precisely the left‑hand statement.  The commutativity Lemma~\ref{lem:rEquiv_lEquiv_comm} shows that any such chain can be rearranged to start with a right equivalence and end with a left equivalence, so no generality is lost.
-\uses{def:DEquiv, lem:rEquiv_lEquiv_comm}
+\begin{itemize}
+  \item The first equivalence is just Definition~\ref{def:DEquiv} unfolded.
+  \item The second equivalence uses the commutation of \(\mathcal R\)- and \(\mathcal L\)-equivalences:
+        any chain \(x \,\mathcal R\, z \,\mathcal L\, y\) can be rotated to a chain
+        \(y \,\mathcal R\, w \,\mathcal L\, x\) (Lemma \texttt{rEquiv\_lEquiv\_comm}).
+  \item Taking \(x,y\) swapped in the second characterization yields the symmetry
+        \(x \,\mathcal D\, y \Rightarrow y \,\mathcal D\, x\).
+\end{itemize}
 \end{proof}
 
-\begin{lemma}[Reflexivity of \(\mathrm{DEquiv}\)]
-\label{lem:DEquiv-refl}
-For every \(x\in M\), one has \(\mathrm{DEquiv}\,x\,x\).
-\lean{DEquiv.refl}
+
+\begin{lemma}[Closure under \(\mathcal L\)- and \(\mathcal R\)-equivalence]
+\label{lem:DEquiv-closures}
+Let \(x,y,z\in M\).
+\begin{itemize}
+  \item If \(x \,\mathcal D\, y\) and \(y \,\mathcal L\, z\), then \(x \,\mathcal D\, z\).
+  \item If \(x \,\mathcal D\, y\) and \(y \,\mathcal R\, z\), then \(x \,\mathcal D\, z\). \hfill(\emph{by duality from the previous bullet, using symmetry})
+\end{itemize}
+\lean{DEquiv.closed_under_lEquiv, DEquiv.closed_under_rEquiv}
 \leanok
-\uses{def:DEquiv, def:REquiv, def:LEquiv}
+\uses{def:DEquiv, def:LEquiv, def:REquiv, lem:LEquiv-isEquivalence, lem:DEquiv-comm-symm}
 \end{lemma}
 \begin{proof}
 \leanok
-Fix \(x\in M\).  Taking \(z=x\), reflexivity of the right equivalence (Lemma~\ref{lem:REquiv-isEquivalence}) and the left equivalence (Lemma~\ref{lem:LEquiv-isEquivalence}) implies \(x \sim_R x\) and \(x \sim_L x\).  Hence \(\mathrm{DEquiv}\,x\,x\) by Definition~\ref{def:DEquiv}.
-\uses{def:DEquiv, def:REquiv, def:LEquiv, lem:REquiv-isEquivalence, lem:LEquiv-isEquivalence}
+\begin{itemize}
+  \item Write \(x \,\mathcal D\, y\) as \(x \,\mathcal R\, u\) and \(u \,\mathcal L\, y\) for some \(u\).
+        If \(y \,\mathcal L\, z\), then by transitivity of \(\mathcal L\)-equivalence,
+        \(u \,\mathcal L\, z\). Hence \(x \,\mathcal R\, u \,\mathcal L\, z\), i.e. \(x \,\mathcal D\, z\).
+  \item For the \(\mathcal R\)-closure: from \(x \,\mathcal D\, y\) get \(y \,\mathcal D\, x\) by symmetry
+        (Lemma~\ref{lem:DEquiv-comm-symm}); combine with \(y \,\mathcal R\, z\) and apply the previous bullet
+        in the dual form to obtain \(y \,\mathcal D\, z\), then symmetrize back to \(x \,\mathcal D\, z\).
+\end{itemize}
 \end{proof}
 
-\begin{lemma}[Symmetry of \(\mathrm{DEquiv}\)]
-\label{lem:DEquiv-symm}
-If \(\mathrm{DEquiv}\,x\,y\) holds then \(\mathrm{DEquiv}\,y\,x\) holds.
-\lean{DEquiv.symm}
-\leanok
-\uses{def:DEquiv, lem:rEquiv_lEquiv_comm}
-\end{lemma}
-\begin{proof}
-\leanok
-Assume \(\mathrm{DEquiv}\,x\,y\).  Then there is \(z\) with \(x \sim_R z\) and \(z \sim_L y\).  By Lemma~\ref{lem:rEquiv_lEquiv_comm} there exists an element \(w\) such that \(z \sim_R y\) and \(y \sim_L w\).  Reversing the roles of left and right in that lemma yields \(y \sim_R w\) and \(w \sim_L x\).  Hence by Definition~\ref{def:DEquiv} we have \(\mathrm{DEquiv}\,y\,x\).
-\uses{def:DEquiv, lem:rEquiv_lEquiv_comm}
-\end{proof}
-
-\begin{lemma}[Closure under left equivalence]
-\label{lem:DEquiv-closed_under_lEquiv}
-If \(\mathrm{DEquiv}\,x\,y\) and \(y \mathrel{LEquiv} z\), then \(\mathrm{DEquiv}\,x\,z\).
-\lean{DEquiv.closed_under_lEquiv}
-\leanok
-\uses{def:DEquiv, def:LEquiv, lem:LEquiv-isEquivalence}
-\end{lemma}
-\begin{proof}
-\leanok
-Suppose \(\mathrm{DEquiv}\,x\,y\).  So there exists \(u\in M\) with \(x \sim_R u\) and \(u \sim_L y\).  If \(y \sim_L z\), then by transitivity of the left equivalence (Lemma~\ref{lem:LEquiv-isEquivalence}) we have \(u \sim_L z\).  Combining \(x \sim_R u\) and \(u \sim_L z\) shows that \(\mathrm{DEquiv}\,x\,z\).
-\uses{def:DEquiv, lem:LEquiv-isEquivalence}
-\end{proof}
-
-\begin{lemma}[Closure under right equivalence]
-\label{lem:DEquiv-closed_under_rEquiv}
-If \(\mathrm{DEquiv}\,x\,y\) and \(y \mathrel{REquiv} z\), then \(\mathrm{DEquiv}\,x\,z\).
-\lean{DEquiv.closed_under_rEquiv}
-\leanok
-\uses{def:DEquiv, def:REquiv, lem:rEquiv_lEquiv_comm, lem:DEquiv-symm, lem:DEquiv-closed_under_lEquiv}
-\end{lemma}
-\begin{proof}
-\leanok
-Assume \(\mathrm{DEquiv}\,x\,y\) and \(y \sim_R z\).  By Lemma~\ref{lem:DEquiv-symm} we know \(\mathrm{DEquiv}\,y\,x\).  Using commutativity of right and left equivalence (Lemma~\ref{lem:rEquiv_lEquiv_comm}), the right equivalence \(y \sim_R z\) may be interpreted as a left equivalence between suitable elements.  Applying closure under left equivalence (Lemma~\ref{lem:DEquiv-closed_under_lEquiv}) to \(\mathrm{DEquiv}\,y\,x\) and this left equivalence yields \(\mathrm{DEquiv}\,y\,z\).  A final application of Lemma~\ref{lem:DEquiv-symm} gives \(\mathrm{DEquiv}\,x\,z\).
-\uses{lem:DEquiv-symm, lem:DEquiv-closed_under_lEquiv, lem:rEquiv_lEquiv_comm}
-\end{proof}
-
-\begin{lemma}[Transitivity of \(\mathrm{DEquiv}\)]
+\begin{lemma}[Transitivity of \(\mathcal D\)]
 \label{lem:DEquiv-trans}
-If \(\mathrm{DEquiv}\,x\,y\) and \(\mathrm{DEquiv}\,y\,z\) then \(\mathrm{DEquiv}\,x\,z\).
+If \(x \,\mathcal D\, y\) and \(y \,\mathcal D\, z\) then \(x \,\mathcal D\, z\).
 \lean{DEquiv.trans}
 \leanok
-\uses{def:DEquiv, lem:DEquiv-closed_under_rEquiv, lem:DEquiv-closed_under_lEquiv}
+\uses{def:DEquiv, lem:DEquiv-closures}
 \end{lemma}
 \begin{proof}
 \leanok
-Assume \(\mathrm{DEquiv}\,x\,y\) and \(\mathrm{DEquiv}\,y\,z\).  By Definition~\ref{def:DEquiv} there exists \(u\) with \(x \sim_R u\) and \(u \sim_L y\), and there exists \(v\) with \(y \sim_R v\) and \(v \sim_L z\).  Applying Lemma~\ref{lem:DEquiv-closed_under_rEquiv} to \(\mathrm{DEquiv}\,x\,y\) and the right equivalence \(y \sim_R v\) gives \(\mathrm{DEquiv}\,x\,v\).  Then Lemma~\ref{lem:DEquiv-closed_under_lEquiv} applied to \(\mathrm{DEquiv}\,x\,v\) and the left equivalence \(v \sim_L z\) yields \(\mathrm{DEquiv}\,x\,z\).
-\uses{def:DEquiv, lem:DEquiv-closed_under_rEquiv, lem:DEquiv-closed_under_lEquiv}
+Choose witnesses \(x \,\mathcal R\, u \,\mathcal L\, y\) and \(y \,\mathcal R\, v \,\mathcal L\, z\).
+Apply the \(\mathcal R\)-closure to get \(x \,\mathcal D\, v\), then the \(\mathcal L\)-closure to conclude \(x \,\mathcal D\, z\).
 \end{proof}
 
-\begin{lemma}[D-equivalence is an equivalence relation]
+\begin{lemma}[\(\mathcal D\) is an equivalence relation]
 \label{lem:DEquiv-isEquiv}
-The relation defined in Definition~\ref{def:DEquiv} is an equivalence relation on \(M\).
+The relation \(\mathcal D\) on \(M\) is reflexive, symmetric, and transitive.
 \lean{DEquiv.isEquiv}
 \leanok
-\uses{def:DEquiv, lem:DEquiv-refl, lem:DEquiv-symm, lem:DEquiv-trans}
+\uses{def:DEquiv, lem:DEquiv-comm-symm, lem:DEquiv-trans}
 \end{lemma}
 \begin{proof}
 \leanok
-An equivalence relation is one that is reflexive, symmetric and transitive.  These three properties are given by Lemmas~\ref{lem:DEquiv-refl}, \ref{lem:DEquiv-symm} and \ref{lem:DEquiv-trans}.  Hence \(\mathrm{DEquiv}\) is an equivalence relation.
-\uses{def:DEquiv, lem:DEquiv-refl, lem:DEquiv-symm, lem:DEquiv-trans}
+\begin{itemize}
+  \item \textbf{Reflexive:} take \(z:=x\) and use reflexivity of \(\mathcal R\) and \(\mathcal L\).
+  \item \textbf{Symmetric:} Lemma~\ref{lem:DEquiv-comm-symm}.
+  \item \textbf{Transitive:} Lemma~\ref{lem:DEquiv-trans}.
+\end{itemize}
 \end{proof}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.8.16)  18 AUG 2025 22:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.8.16)  3 SEP 2025 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -712,39 +712,117 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Chapter 1.
 (./LaTeX/GreensRelations/Preorders.tex
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 10.
+(Font)              scaled to size 10.00107pt on input line 7.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 10.
+(Font)              scaled to size 7.00075pt on input line 7.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 10.
+(Font)              scaled to size 5.00053pt on input line 7.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 10.
+(Font)              scaled to size 9.99893pt on input line 7.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 10.
+(Font)              scaled to size 6.99925pt on input line 7.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 10.
+(Font)              scaled to size 4.99947pt on input line 7.
  [1
 
 ])
 (./LaTeX/GreensRelations/EquivOfPreorder.tex)
-(./LaTeX/GreensRelations/Equiv.tex [2])
-(./LaTeX/GreensRelations/Cancellation.tex [3])
-(./LaTeX/GreensRelations/Idempotent.tex)
-(./LaTeX/GreensRelations/RLMulCompat.tex [4])
-(./LaTeX/GreensRelations/RLComm.tex [5]) (./LaTeX/GreensRelations/DEquiv.tex
-[6]) (./LaTeX/GreensRelations/EquivClass.tex)) [7]
-(/workspaces/LeanblueprintTesting/blueprint/print/print.aux)
+(./LaTeX/GreensRelations/Equiv.tex
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 14.40152pt on input line 4.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 14.39845pt on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symcal' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symcal' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symcal' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symcal' on input line 4.
+
+
+LaTeX Warning: Reference `lem:RRel-isPreorder' on page 2 undefined on input lin
+e 18.
+
+
+LaTeX Warning: Reference `lem:LRel-isPreorder' on page 2 undefined on input lin
+e 33.
+
+
+LaTeX Warning: Reference `lem:JRel-isPreorder' on page 2 undefined on input lin
+e 48.
+
+[2]
+
+LaTeX Warning: Reference `lem:HRel-isPreorder' on page 3 undefined on input lin
+e 63.
+
+) (./LaTeX/GreensRelations/PreorderBasic.tex [3])
+(./LaTeX/GreensRelations/RLMulCompat.tex) (./LaTeX/GreensRelations/RLComm.tex
+
+LaTeX Warning: Reference `lem:RRel-mul_left_compat' on page 4 undefined on inpu
+t line 8.
+
+
+LaTeX Warning: Reference `lem:LRel-mul_right_compat' on page 4 undefined on inp
+ut line 8.
+
+[4]
+
+LaTeX Warning: Reference `lem:REquiv-mul_left_compat' on page 5 undefined on in
+put line 37.
+
+
+LaTeX Warning: Reference `lem:LEquiv-mul_right_compat' on page 5 undefined on i
+nput line 37.
+
+
+LaTeX Warning: Reference `lem:REquiv-mul_left_compat' on page 5 undefined on in
+put line 53.
+
+
+LaTeX Warning: Reference `lem:LEquiv-mul_right_compat' on page 5 undefined on i
+nput line 59.
+
+) (./LaTeX/GreensRelations/DEquiv.tex [5])
+(./LaTeX/GreensRelations/EquivClass.tex [6]) [7]
+Chapter 2.
+(./LaTeX/Location.tex [8
+
+]
+Overfull \hbox (32.47136pt too wide) in paragraph at lines 69--72
+\TU/lmr/m/n/10 jection from the $[]$-class of $[]$ onto the $[]$-class of $[][]
+$. (Label: \TU/lmtt/m/n/10 lem:right-translation-bijection\TU/lmr/m/n/10 .) 
+ []
+
+)) [9] (/workspaces/LeanblueprintTesting/blueprint/print/print.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `print.out' has not changed.
-(rerunfilecheck)             Checksum: 31B35DD8D6463B91A4573CCA5857D295;1824.
+(rerunfilecheck)             Checksum: 3289699F15C2880FCDF27B769E5A1C7D;1779.
  ) 
 Here is how much of TeX's memory you used:
- 16666 strings out of 478190
- 310887 string characters out of 5854827
- 819831 words of memory out of 5000000
- 37033 multiletter control sequences out of 15000+600000
- 474646 words of font info for 79 fonts, out of 8000000 for 9000
+ 16680 strings out of 478190
+ 311241 string characters out of 5854827
+ 814831 words of memory out of 5000000
+ 37035 multiletter control sequences out of 15000+600000
+ 475639 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,6n,115p,845b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,6n,115p,845b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /workspaces/LeanblueprintTesting/blueprint/print/print.pdf (8
- pages).
+Output written on /workspaces/LeanblueprintTesting/blueprint/print/print.pdf (1
+0 pages).

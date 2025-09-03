@@ -1,0 +1,87 @@
+
+\section{Location Theorem (Proposition 1.6)}
+
+Throughout this section, let \(M\) be a monoid and write multiplication multiplicatively.  
+
+\begin{proposition}[Location Theorem]
+\label{prop:location}
+For any \(x,y\in M\), the following are equivalent:
+\[
+\bigl(\exists\, e\in M,\; e^2=e,\; e \,\mathcal L\, x,\; e \,\mathcal R\, y\bigr)
+\quad\Longleftrightarrow\quad
+(xy) \,\mathcal R\, x \;\text{ and }\; (xy) \,\mathcal L\, y.
+\]
+\end{proposition}
+
+\begin{proof}
+\emph{(\(\Rightarrow\)).} Suppose there is an idempotent \(e\) with \(e \,\mathcal L\, x\) and \(e \,\mathcal R\, y\).
+For idempotent \(e\), we have the characterizations
+\[
+\textstyle e \,\mathcal L\, x \iff x e = x, \qquad e \,\mathcal R\, y \iff e y = y.
+\]
+Thus \(x e = x\) and \(e y = y\).  
+Green-equivalence is compatible with multiplication: from \(y \,\mathcal R\, e\) we get \(x y \,\mathcal R\, x e\), hence \(x y \,\mathcal R\, x\).  
+Similarly, from \(x \,\mathcal L\, e\) we get \(x y \,\mathcal L\, e y\), hence \(x y \,\mathcal L\, y\).
+
+\smallskip
+\emph{(\(\Leftarrow\)).} Assume \((xy)\,\mathcal R\, x\) and \((xy)\,\mathcal L\, y\).
+Consider the right-translation map \(\rho_y\colon M\to M,\; z\mapsto z y\).
+Under \((xy)\,\mathcal R\,x\), the restriction of \(\rho_y\) to the \(\mathcal R\)-class of \(x\) is a bijection onto the \(\mathcal R\)-class of \(xy\).
+Since also \((xy)\,\mathcal L\, y\), the element \(xy\) (hence \(y\)) lies in the \(\rho_y\)-image of that class.  
+Thus there exists \(t\in M\) such that
+\[
+t y \,\mathcal R\, x y
+\quad\text{and}\quad
+t y \,\mathcal L\, y.
+\]
+From these, one extracts a witness \(u\in M\) with
+\[
+t y u = t \qquad\text{(a ``right-stabilizer'' identity).}
+\]
+Set \(e := t\). Then
+\[
+e^2
+\;=\; e\,(t)
+\;=\; e\,(t y u)
+\;=\; (e y)\,u
+\;=\; (t y)\,u
+\;=\; t
+\;=\; e,
+\]
+using associativity and the stabilizer identity. Hence \(e\) is idempotent.  
+Moreover, from \(t y \,\mathcal L\, y\) we obtain \(e \,\mathcal R\, y\) (take the standard witnesses from the \(\mathcal L\)-equivalence), and from \(t y \,\mathcal R\, x y\) we obtain \(e \,\mathcal L\, x\). Thus there exists an idempotent \(e\) with \(e \,\mathcal L\, x\) and \(e \,\mathcal R\, y\).
+\end{proof}
+
+\noindent\textbf{Notes / Dependencies to establish (working backwards).}
+\begin{itemize}
+  \item \textbf{Idempotent \(\mathcal L/\mathcal R\) characterizations.}
+    \begin{itemize}
+      \item \(\bigl(e^2=e \ \&\  e \,\mathcal L\, x\bigr)\ \Rightarrow\ x e = x\); equivalently \(e \,\mathcal L\, x \iff x e = x\) when \(e\) is idempotent.
+      \item \(\bigl(e^2=e \ \&\  e \,\mathcal R\, y\bigr)\ \Rightarrow\ e y = y\); equivalently \(e \,\mathcal R\, y \iff e y = y\) when \(e\) is idempotent.
+    \end{itemize}
+    (Labels to prove: \texttt{lem:L-idem-char}, \texttt{lem:R-idem-char}.)
+  \item \textbf{Compatibility of Green’s equivalences with multiplication.}
+    \begin{itemize}
+      \item If \(a \,\mathcal R\, b\) then \(c a \,\mathcal R\, c b\) for all \(c\).
+      \item If \(a \,\mathcal L\, b\) then \(a c \,\mathcal L\, b c\) for all \(c\).
+    \end{itemize}
+    (Labels: \texttt{lem:REquiv-mul-left}, \texttt{lem:LEquiv-mul-right}.)
+  \item \textbf{Right-translation bijection on \(\mathcal R\)-classes.}  
+    If \((xy)\,\mathcal R\, x\), then \(\rho_y:z\mapsto zy\) restricts to a bijection from the \(\mathcal R\)-class of \(x\) onto the \(\mathcal R\)-class of \(xy\).  
+    (Label: \texttt{lem:right-translation-bijection}.)
+  \item \textbf{Surjectivity toward the \(\mathcal L\)-class of \(y\).}  
+    Using \((xy)\,\mathcal L\, y\) and the previous item, find \(t\) with \(t y \,\mathcal L\, y\) and \(t y \,\mathcal R\, x y\).  
+    (Label: \texttt{lem:translation-hits-Lclass}.)
+  \item \textbf{Right-stabilizer identity.}  
+    From \(t y \,\mathcal R\, x y\) and \(t y \le_{\mathcal L} t\) (the latter follows from \(t y \,\mathcal L\, y\)), obtain \(u\) with \(t y u = t\).  
+    (Label: \texttt{lem:right-id-from-REquiv-and-LLE}.)
+  \item \textbf{Idempotence criterion.}  
+    If \(t y u = t\) and \(t y\) is \(\mathcal R\)-equivalent to \(x y\), then \(t^2 = t\).  
+    (Label: \texttt{lem:idempotence-from-stabilizer}.)
+  \item \textbf{Recovering \(\mathcal L/\mathcal R\) for \(e=t\).}  
+    From \(t y \,\mathcal L\, y\) build witnesses for \(t \,\mathcal R\, y\); from \(t y \,\mathcal R\, x y\) build witnesses for \(t \,\mathcal L\, x\).  
+    (Labels: \texttt{lem:from-tyL-to-eRy}, \texttt{lem:from-tyR-to-eLx}.)
+\end{itemize}
+
+\noindent\textbf{Remark (Dual version).}  
+The left–right dual statement also holds: exchanging \(\mathcal L\) and \(\mathcal R\), the roles of left and right multiplications, and using the analogous left-translation bijection yields the dual location theorem. \emph{(TODO: record as a separate proposition.)}
