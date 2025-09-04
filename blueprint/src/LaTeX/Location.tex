@@ -1,7 +1,88 @@
+\section{Green’s Lemma}
+
+\begin{lemma}[Translation identity for \(\mathcal L\)-below elements]
+\label{lem:id-translation}
+Let \(M\) be a monoid and suppose \(x,y\in M\) satisfy \(x \,\mathcal R\, y\).  
+Choose \(u,v\in M\) with \(x\cdot u = y\) and \(y\cdot v = x\).
+Then for every \(z\in M\) with \(z \le_{\mathcal L} x\), the map
+\[
+\rho_{u,v}\colon M \to M, \qquad \rho_{u,v}(t) := t\cdot u\cdot v
+\]
+acts as the identity on \(z\), i.e. \(\rho_{u,v}(z) = z\).
+A left–right dual statement holds with left-translations and \(\mathcal R\)-below elements.
+\end{lemma}
+
+\begin{proof}
+Since \(z \le_{\mathcal L} x\), there exists \(t\in M\) with \(z = t\cdot x\).
+Using associativity and the relations \(x\cdot u = y\) and \(y\cdot v = x\), we compute
+\[
+z\cdot u\cdot v
+= t\cdot x\cdot u\cdot v
+= t\cdot y\cdot v
+= t\cdot x
+= z.\qedhere
+\]
+\end{proof}
+
+
+\begin{lemma}[Green’s Lemma]
+\label{lem:greens-lemma}
+Let \(M\) be a monoid and let \(x,y\in M\) with \(x \,\mathcal R\, y\).
+Fix \(u,v\in M\) such that \(x\cdot u = y\) and \(y\cdot v = x\).
+Then the right-translation
+\[
+\rho_u \colon M \to M, \qquad \rho_u(z) := z\cdot u,
+\]
+restricts to a bijection from the \(\mathcal L\)-class of \(x\) onto the \(\mathcal L\)-class of \(y\);
+moreover, \(\rho_v(z):=z\cdot v\) is the inverse bijection.
+Additionally, these translations preserve \(\mathcal H\)-equivalence.
+\end{lemma}
+
+\begin{proof}
+It suffices to verify the following:
+
+\medskip
+\noindent\emph{(1) Image in the correct \(\mathcal L\)-class.}
+If \(z \,\mathcal L\, x\) then \(z\cdot u \,\mathcal L\, y\).
+Indeed, writing \(z = t\cdot x\) for some \(t\), we have
+\(z\cdot u = t\cdot x\cdot u = t\cdot y\), so \(z\cdot u \,\mathcal L\, y\)
+(equivalently, by compatibility of \(\mathcal L\) with right-multiplication).
+
+\medskip
+\noindent\emph{(2) Injectivity on the \(\mathcal L\)-class of \(x\).}
+If \(z,w \,\mathcal L\, x\) and \(z\cdot u = w\cdot u\), then \(z=w\).
+By Lemma~\ref{lem:id-translation}, \(z\cdot u\cdot v = z\) and \(w\cdot u\cdot v = w\).
+Hence \(z = z\cdot u\cdot v = w\cdot u\cdot v = w\).
+
+\medskip
+\noindent\emph{(3) Surjectivity onto the \(\mathcal L\)-class of \(y\).}
+Let \(z \,\mathcal L\, y\). Set \(w := z\cdot v\).
+Then \(w \,\mathcal L\, y\cdot v = x\), so \(w \,\mathcal L\, x\).
+Moreover, by Lemma~\ref{lem:id-translation} (applied with \(z\) in the \(\mathcal L\)-class of \(y\)),
+\[
+z = z\cdot v\cdot u = w\cdot u = \rho_u(w),
+\]
+so \(z\) lies in the image of \(\rho_u\).
+
+\medskip
+\noindent\emph{(4) \(\rho_u\) and \(\rho_v\) are inverses on the respective \(\mathcal L\)-classes.}
+If \(z \,\mathcal L\, x\), then \(z\cdot u\cdot v = z\) by Lemma~\ref{lem:id-translation};
+if \(z \,\mathcal L\, y\), then \(z\cdot v\cdot u = z\) (the same lemma with the roles of \(x,y\) interchanged).
+
+\medskip
+\noindent\emph{(5) Preservation of \(\mathcal H\)-equivalence.}
+For \(z,w \,\mathcal L\, x\) one should verify
+\[
+z \,\mathcal H\, w \quad\Longleftrightarrow\quad z\cdot u \,\mathcal H\, w\cdot u.
+\]
+Using \(\rho_{u,v}\) from Lemma~\ref{lem:id-translation} gives \(z\cdot u \,\mathcal R\, z\) and \(w\cdot u \,\mathcal R\, w\),
+and the \(\mathcal L\)-compatibility from (1) supplies the \(\mathcal L\)-side; a routine transitivity argument then completes the proof. \emph{(Details omitted.)}
+\end{proof}
+
 
 \section{Location Theorem (Proposition 1.6)}
 
-Throughout this section, let \(M\) be a monoid and write multiplication multiplicatively.  
+Throughout this section, let \(M\) be a monoid and write multiplication multiplicatively.
 
 \begin{proposition}[Location Theorem]
 \label{prop:location}
@@ -9,79 +90,39 @@ For any \(x,y\in M\), the following are equivalent:
 \[
 \bigl(\exists\, e\in M,\; e^2=e,\; e \,\mathcal L\, x,\; e \,\mathcal R\, y\bigr)
 \quad\Longleftrightarrow\quad
-(xy) \,\mathcal R\, x \;\text{ and }\; (xy) \,\mathcal L\, y.
+(xy) \,\mathcal R\, x \ \text{ and }\ (xy) \,\mathcal L\, y.
 \]
 \end{proposition}
 
 \begin{proof}
-\emph{(\(\Rightarrow\)).} Suppose there is an idempotent \(e\) with \(e \,\mathcal L\, x\) and \(e \,\mathcal R\, y\).
-For idempotent \(e\), we have the characterizations
+\emph{(\(\Rightarrow\)).}
+Assume \(e^2=e\), \(e \,\mathcal L\, x\), and \(e \,\mathcal R\, y\).
+For idempotents one has the characterizations
 \[
-\textstyle e \,\mathcal L\, x \iff x e = x, \qquad e \,\mathcal R\, y \iff e y = y.
+e \,\mathcal L\, x \iff x e = x, \qquad e \,\mathcal R\, y \iff e y = y.
 \]
-Thus \(x e = x\) and \(e y = y\).  
-Green-equivalence is compatible with multiplication: from \(y \,\mathcal R\, e\) we get \(x y \,\mathcal R\, x e\), hence \(x y \,\mathcal R\, x\).  
-Similarly, from \(x \,\mathcal L\, e\) we get \(x y \,\mathcal L\, e y\), hence \(x y \,\mathcal L\, y\).
+Hence \(x e = x\) and \(e y = y\).
+By multiplicative compatibility of Green’s relations (see
+\ref{lem:right-mul-compat-left} and \ref{lem:left-mul-compat-right}),
+from \(y \,\mathcal R\, e\) we deduce \(x y \,\mathcal R\, x e = x\),
+and from \(x \,\mathcal L\, e\) we deduce \(x y \,\mathcal L\, e y = y\).
 
 \smallskip
-\emph{(\(\Leftarrow\)).} Assume \((xy)\,\mathcal R\, x\) and \((xy)\,\mathcal L\, y\).
-Consider the right-translation map \(\rho_y\colon M\to M,\; z\mapsto z y\).
-Under \((xy)\,\mathcal R\,x\), the restriction of \(\rho_y\) to the \(\mathcal R\)-class of \(x\) is a bijection onto the \(\mathcal R\)-class of \(xy\).
-Since also \((xy)\,\mathcal L\, y\), the element \(xy\) (hence \(y\)) lies in the \(\rho_y\)-image of that class.  
-Thus there exists \(t\in M\) such that
+\emph{(\(\Leftarrow\)).}
+Assume \((x y)\,\mathcal R\, x\) and \((x y)\,\mathcal L\, y\).
+Consider the right-translation \(\rho_y(z)=z y\).
+By Green’s Lemma (\ref{lem:greens-lemma}), \(\rho_y\) restricts to a bijection from the \(\mathcal L\)-class of \(x\)
+onto the \(\mathcal L\)-class of \(x y\). Since \(y \,\mathcal L\, x y\), there exists \(t\) in the \(\mathcal L\)-class of \(x\) with
+\(t y = y\).
+From \((x y)\,\mathcal R\, x\) choose \(u\) with \(x y \cdot u = x\).
+Applying Lemma~\ref{lem:id-translation} (with \(x \,\mathcal R\, x y\)) to \(t\) gives
+\(t y u = t\). Therefore
 \[
-t y \,\mathcal R\, x y
-\quad\text{and}\quad
-t y \,\mathcal L\, y.
+t^2 = t\cdot t = t\cdot (t y u) = (t\cdot t y)\,u = (t y)\,u = t,
 \]
-From these, one extracts a witness \(u\in M\) with
-\[
-t y u = t \qquad\text{(a ``right-stabilizer'' identity).}
-\]
-Set \(e := t\). Then
-\[
-e^2
-\;=\; e\,(t)
-\;=\; e\,(t y u)
-\;=\; (e y)\,u
-\;=\; (t y)\,u
-\;=\; t
-\;=\; e,
-\]
-using associativity and the stabilizer identity. Hence \(e\) is idempotent.  
-Moreover, from \(t y \,\mathcal L\, y\) we obtain \(e \,\mathcal R\, y\) (take the standard witnesses from the \(\mathcal L\)-equivalence), and from \(t y \,\mathcal R\, x y\) we obtain \(e \,\mathcal L\, x\). Thus there exists an idempotent \(e\) with \(e \,\mathcal L\, x\) and \(e \,\mathcal R\, y\).
+so \(t\) is idempotent. Moreover \(t \,\mathcal R\, y\) because \(t y = y\), and \(t \,\mathcal L\, x\) since \(t\) was chosen in the \(\mathcal L\)-class of \(x\).
+Thus there exists an idempotent \(t\) with \(t \,\mathcal L\, x\) and \(t \,\mathcal R\, y\).
 \end{proof}
 
-\noindent\textbf{Notes / Dependencies to establish (working backwards).}
-\begin{itemize}
-  \item \textbf{Idempotent \(\mathcal L/\mathcal R\) characterizations.}
-    \begin{itemize}
-      \item \(\bigl(e^2=e \ \&\  e \,\mathcal L\, x\bigr)\ \Rightarrow\ x e = x\); equivalently \(e \,\mathcal L\, x \iff x e = x\) when \(e\) is idempotent.
-      \item \(\bigl(e^2=e \ \&\  e \,\mathcal R\, y\bigr)\ \Rightarrow\ e y = y\); equivalently \(e \,\mathcal R\, y \iff e y = y\) when \(e\) is idempotent.
-    \end{itemize}
-    (Labels to prove: \texttt{lem:L-idem-char}, \texttt{lem:R-idem-char}.)
-  \item \textbf{Compatibility of Green’s equivalences with multiplication.}
-    \begin{itemize}
-      \item If \(a \,\mathcal R\, b\) then \(c a \,\mathcal R\, c b\) for all \(c\).
-      \item If \(a \,\mathcal L\, b\) then \(a c \,\mathcal L\, b c\) for all \(c\).
-    \end{itemize}
-    (Labels: \texttt{lem:REquiv-mul-left}, \texttt{lem:LEquiv-mul-right}.)
-  \item \textbf{Right-translation bijection on \(\mathcal R\)-classes.}  
-    If \((xy)\,\mathcal R\, x\), then \(\rho_y:z\mapsto zy\) restricts to a bijection from the \(\mathcal R\)-class of \(x\) onto the \(\mathcal R\)-class of \(xy\).  
-    (Label: \texttt{lem:right-translation-bijection}.)
-  \item \textbf{Surjectivity toward the \(\mathcal L\)-class of \(y\).}  
-    Using \((xy)\,\mathcal L\, y\) and the previous item, find \(t\) with \(t y \,\mathcal L\, y\) and \(t y \,\mathcal R\, x y\).  
-    (Label: \texttt{lem:translation-hits-Lclass}.)
-  \item \textbf{Right-stabilizer identity.}  
-    From \(t y \,\mathcal R\, x y\) and \(t y \le_{\mathcal L} t\) (the latter follows from \(t y \,\mathcal L\, y\)), obtain \(u\) with \(t y u = t\).  
-    (Label: \texttt{lem:right-id-from-REquiv-and-LLE}.)
-  \item \textbf{Idempotence criterion.}  
-    If \(t y u = t\) and \(t y\) is \(\mathcal R\)-equivalent to \(x y\), then \(t^2 = t\).  
-    (Label: \texttt{lem:idempotence-from-stabilizer}.)
-  \item \textbf{Recovering \(\mathcal L/\mathcal R\) for \(e=t\).}  
-    From \(t y \,\mathcal L\, y\) build witnesses for \(t \,\mathcal R\, y\); from \(t y \,\mathcal R\, x y\) build witnesses for \(t \,\mathcal L\, x\).  
-    (Labels: \texttt{lem:from-tyL-to-eRy}, \texttt{lem:from-tyR-to-eLx}.)
-\end{itemize}
-
-\noindent\textbf{Remark (Dual version).}  
-The left–right dual statement also holds: exchanging \(\mathcal L\) and \(\mathcal R\), the roles of left and right multiplications, and using the analogous left-translation bijection yields the dual location theorem. \emph{(TODO: record as a separate proposition.)}
+\noindent\textbf{Remark (dual version).}
+Interchanging \(\mathcal L\) and \(\mathcal R\) and using left-translation bijections yields the left–right dual location theorem.  \emph{(To be recorded separately.)}

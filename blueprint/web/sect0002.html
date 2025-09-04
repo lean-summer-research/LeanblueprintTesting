@@ -64,7 +64,10 @@
   <span class="expand-toc">▼</span>
   <ul class="sub-toc-1 active">
      <li class="">
-  <a href="sect0002.html#a0000000033"><span class="toc_ref">2.1</span> <span class="toc_entry">Location Theorem (Proposition 1.6)</span></a>
+  <a href="sect0002.html#a0000000033"><span class="toc_ref">2.1</span> <span class="toc_entry">Green’s Lemma</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html#a0000000034"><span class="toc_ref">2.2</span> <span class="toc_entry">Location Theorem (Proposition 1.6)</span></a>
  </li>
 
   </ul>
@@ -79,14 +82,115 @@
 
 <div class="main-text">
 <h1 id="a0000000003">2 Location Theorem</h1>
-<h1 id="a0000000033">2.1 Location Theorem (Proposition 1.6)</h1>
+<h1 id="a0000000033">2.1 Green’s Lemma</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:id-translation">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">36</span>
+    <span class="lemma_thmtitle">Translation identity for \(\mathcal L\)-below elements</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#lem:id-translation">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(M\) be a monoid and suppose \(x,y\in M\) satisfy \(x \, \mathcal R\,  y\). Choose \(u,v\in M\) with \(x\cdot u = y\) and \(y\cdot v = x\). Then for every \(z\in M\) with \(z \le _{\mathcal L} x\), the map </p>
+<div class="displaymath" id="a0000000036">
+  \[  \rho _{u,v}\colon M \to M, \qquad \rho _{u,v}(t) := t\cdot u\cdot v  \]
+</div>
+<p> acts as the identity on \(z\), i.e. \(\rho _{u,v}(z) = z\). A left–right dual statement holds with left-translations and \(\mathcal R\)-below elements. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Since \(z \le _{\mathcal L} x\), there exists \(t\in M\) with \(z = t\cdot x\). Using associativity and the relations \(x\cdot u = y\) and \(y\cdot v = x\), we compute </p>
+<div class="displaymath" id="a0000000037">
+  \[  z\cdot u\cdot v = t\cdot x\cdot u\cdot v = t\cdot y\cdot v = t\cdot x = z.\qedhere  \]
+</div>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:greens-lemma">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">37</span>
+    <span class="lemma_thmtitle">Green’s Lemma</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0002.html#lem:greens-lemma">#</a>
+    
+    <a class="icon proof" href="sect0002.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(M\) be a monoid and let \(x,y\in M\) with \(x \, \mathcal R\,  y\). Fix \(u,v\in M\) such that \(x\cdot u = y\) and \(y\cdot v = x\). Then the right-translation </p>
+<div class="displaymath" id="a0000000039">
+  \[  \rho _u \colon M \to M, \qquad \rho _u(z) := z\cdot u,  \]
+</div>
+<p> restricts to a bijection from the \(\mathcal L\)-class of \(x\) onto the \(\mathcal L\)-class of \(y\); moreover, \(\rho _v(z):=z\cdot v\) is the inverse bijection. Additionally, these translations preserve \(\mathcal H\)-equivalence. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>It suffices to verify the following: </p>
+<p><em>(1) Image in the correct \(\mathcal L\)-class.</em> If \(z \, \mathcal L\,  x\) then \(z\cdot u \, \mathcal L\,  y\). Indeed, writing \(z = t\cdot x\) for some \(t\), we have \(z\cdot u = t\cdot x\cdot u = t\cdot y\), so \(z\cdot u \, \mathcal L\,  y\) (equivalently, by compatibility of \(\mathcal L\) with right-multiplication). </p>
+<p><em>(2) Injectivity on the \(\mathcal L\)-class of \(x\).</em> If \(z,w \, \mathcal L\,  x\) and \(z\cdot u = w\cdot u\), then \(z=w\). By Lemma&#160;<a href="sect0002.html#lem:id-translation">36</a>, \(z\cdot u\cdot v = z\) and \(w\cdot u\cdot v = w\). Hence \(z = z\cdot u\cdot v = w\cdot u\cdot v = w\). </p>
+<p><em>(3) Surjectivity onto the \(\mathcal L\)-class of \(y\).</em> Let \(z \, \mathcal L\,  y\). Set \(w := z\cdot v\). Then \(w \, \mathcal L\,  y\cdot v = x\), so \(w \, \mathcal L\,  x\). Moreover, by Lemma&#160;<a href="sect0002.html#lem:id-translation">36</a> (applied with \(z\) in the \(\mathcal L\)-class of \(y\)), </p>
+<div class="displaymath" id="a0000000040">
+  \[  z = z\cdot v\cdot u = w\cdot u = \rho _u(w),  \]
+</div>
+<p> so \(z\) lies in the image of \(\rho _u\). </p>
+<p><em>(4) \(\rho _u\) and \(\rho _v\) are inverses on the respective \(\mathcal L\)-classes.</em> If \(z \, \mathcal L\,  x\), then \(z\cdot u\cdot v = z\) by Lemma&#160;<a href="sect0002.html#lem:id-translation">36</a>; if \(z \, \mathcal L\,  y\), then \(z\cdot v\cdot u = z\) (the same lemma with the roles of \(x,y\) interchanged). </p>
+<p><em>(5) Preservation of \(\mathcal H\)-equivalence.</em> For \(z,w \, \mathcal L\,  x\) one should verify </p>
+<div class="displaymath" id="a0000000041">
+  \[  z \, \mathcal H\,  w \quad \Longleftrightarrow \quad z\cdot u \, \mathcal H\,  w\cdot u.  \]
+</div>
+<p> Using \(\rho _{u,v}\) from Lemma&#160;<a href="sect0002.html#lem:id-translation">36</a> gives \(z\cdot u \, \mathcal R\,  z\) and \(w\cdot u \, \mathcal R\,  w\), and the \(\mathcal L\)-compatibility from (1) supplies the \(\mathcal L\)-side; a routine transitivity argument then completes the proof. <em>(Details omitted.)</em> </p>
+
+  </div>
+</div>
+<h1 id="a0000000034">2.2 Location Theorem (Proposition 1.6)</h1>
 <p>Throughout this section, let \(M\) be a monoid and write multiplication multiplicatively. </p>
 <div class="proposition_thmwrapper theorem-style-plain" id="prop:location">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
     Proposition
     </span>
-    <span class="proposition_thmlabel">36</span>
+    <span class="proposition_thmlabel">38</span>
     <span class="proposition_thmtitle">Location Theorem</span>
     <div class="thm_header_extras">
 
@@ -95,7 +199,7 @@
 
     <a class="icon proof" href="sect0002.html#prop:location">#</a>
     
-    <a class="icon proof" href="sect0002.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0002.html#a0000000042"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -104,13 +208,13 @@
   </div>
   <div class="proposition_thmcontent">
   <p>  For any \(x,y\in M\), the following are equivalent: </p>
-<div class="displaymath" id="a0000000035">
-  \[  \bigl(\exists \,  e\in M,\;  e^2=e,\;  e \, \mathcal L\,  x,\;  e \, \mathcal R\,  y\bigr) \quad \Longleftrightarrow \quad (xy) \, \mathcal R\,  x \; \text{ and }\;  (xy) \, \mathcal L\,  y.  \]
+<div class="displaymath" id="a0000000043">
+  \[  \bigl(\exists \,  e\in M,\;  e^2=e,\;  e \, \mathcal L\,  x,\;  e \, \mathcal R\,  y\bigr) \quad \Longleftrightarrow \quad (xy) \, \mathcal R\,  x \  \text{ and }\  (xy) \, \mathcal L\,  y.  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000034">
+<div class="proof_wrapper" id="a0000000042">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -118,59 +222,20 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p><em>(\(\Rightarrow \)).</em> Suppose there is an idempotent \(e\) with \(e \, \mathcal L\,  x\) and \(e \, \mathcal R\,  y\). For idempotent \(e\), we have the characterizations </p>
-<div class="displaymath" id="a0000000036">
-  \[  \textstyle e \, \mathcal L\,  x \iff x e = x, \qquad e \, \mathcal R\,  y \iff e y = y.  \]
+  <p><em>(\(\Rightarrow \)).</em> Assume \(e^2=e\), \(e \, \mathcal L\,  x\), and \(e \, \mathcal R\,  y\). For idempotents one has the characterizations </p>
+<div class="displaymath" id="a0000000044">
+  \[  e \, \mathcal L\,  x \iff x e = x, \qquad e \, \mathcal R\,  y \iff e y = y.  \]
 </div>
-<p> Thus \(x e = x\) and \(e y = y\). Green-equivalence is compatible with multiplication: from \(y \, \mathcal R\,  e\) we get \(x y \, \mathcal R\,  x e\), hence \(x y \, \mathcal R\,  x\). Similarly, from \(x \, \mathcal L\,  e\) we get \(x y \, \mathcal L\,  e y\), hence \(x y \, \mathcal L\,  y\). </p>
-<p><em>(\(\Leftarrow \)).</em> Assume \((xy)\, \mathcal R\,  x\) and \((xy)\, \mathcal L\,  y\). Consider the right-translation map \(\rho _y\colon M\to M,\;  z\mapsto z y\). Under \((xy)\, \mathcal R\, x\), the restriction of \(\rho _y\) to the \(\mathcal R\)-class of \(x\) is a bijection onto the \(\mathcal R\)-class of \(xy\). Since also \((xy)\, \mathcal L\,  y\), the element \(xy\) (hence \(y\)) lies in the \(\rho _y\)-image of that class. Thus there exists \(t\in M\) such that </p>
-<div class="displaymath" id="a0000000037">
-  \[  t y \, \mathcal R\,  x y \quad \text{and}\quad t y \, \mathcal L\,  y.  \]
+<p> Hence \(x e = x\) and \(e y = y\). By multiplicative compatibility of Green’s relations (see <a href="sect0001.html#lem:right-mul-compat-left">23</a> and <a href="sect0001.html#lem:left-mul-compat-right">22</a>), from \(y \, \mathcal R\,  e\) we deduce \(x y \, \mathcal R\,  x e = x\), and from \(x \, \mathcal L\,  e\) we deduce \(x y \, \mathcal L\,  e y = y\). </p>
+<p><em>(\(\Leftarrow \)).</em> Assume \((x y)\, \mathcal R\,  x\) and \((x y)\, \mathcal L\,  y\). Consider the right-translation \(\rho _y(z)=z y\). By Green’s Lemma (<a href="sect0002.html#lem:greens-lemma">37</a>), \(\rho _y\) restricts to a bijection from the \(\mathcal L\)-class of \(x\) onto the \(\mathcal L\)-class of \(x y\). Since \(y \, \mathcal L\,  x y\), there exists \(t\) in the \(\mathcal L\)-class of \(x\) with \(t y = y\). From \((x y)\, \mathcal R\,  x\) choose \(u\) with \(x y \cdot u = x\). Applying Lemma&#160;<a href="sect0002.html#lem:id-translation">36</a> (with \(x \, \mathcal R\,  x y\)) to \(t\) gives \(t y u = t\). Therefore </p>
+<div class="displaymath" id="a0000000045">
+  \[  t^2 = t\cdot t = t\cdot (t y u) = (t\cdot t y)\, u = (t y)\, u = t,  \]
 </div>
-<p> From these, one extracts a witness \(u\in M\) with </p>
-<div class="displaymath" id="a0000000038">
-  \[  t y u = t \qquad \text{(a ``right-stabilizer'' identity).}  \]
-</div>
-<p> Set \(e := t\). Then </p>
-<div class="displaymath" id="a0000000039">
-  \[  e^2 \; =\;  e\, (t) \; =\;  e\, (t y u) \; =\;  (e y)\, u \; =\;  (t y)\, u \; =\;  t \; =\;  e,  \]
-</div>
-<p> using associativity and the stabilizer identity. Hence \(e\) is idempotent. Moreover, from \(t y \, \mathcal L\,  y\) we obtain \(e \, \mathcal R\,  y\) (take the standard witnesses from the \(\mathcal L\)-equivalence), and from \(t y \, \mathcal R\,  x y\) we obtain \(e \, \mathcal L\,  x\). Thus there exists an idempotent \(e\) with \(e \, \mathcal L\,  x\) and \(e \, \mathcal R\,  y\). </p>
+<p> so \(t\) is idempotent. Moreover \(t \, \mathcal R\,  y\) because \(t y = y\), and \(t \, \mathcal L\,  x\) since \(t\) was chosen in the \(\mathcal L\)-class of \(x\). Thus there exists an idempotent \(t\) with \(t \, \mathcal L\,  x\) and \(t \, \mathcal R\,  y\). </p>
 
   </div>
 </div>
-<p><b class="bfseries">Notes / Dependencies to establish (working backwards).</b> </p>
-<ul class="itemize">
-  <li><p><b class="bfseries">Idempotent \(\mathcal L/\mathcal R\) characterizations.</b> </p>
-<ul class="itemize">
-  <li><p>\(\bigl(e^2=e \  \& \   e \, \mathcal L\,  x\bigr)\  \Rightarrow \  x e = x\); equivalently \(e \, \mathcal L\,  x \iff x e = x\) when \(e\) is idempotent. </p>
-</li>
-  <li><p>\(\bigl(e^2=e \  \& \   e \, \mathcal R\,  y\bigr)\  \Rightarrow \  e y = y\); equivalently \(e \, \mathcal R\,  y \iff e y = y\) when \(e\) is idempotent. </p>
-</li>
-</ul>
-<p> (Labels to prove: <span class="ttfamily">lem:L-idem-char</span>, <span class="ttfamily">lem:R-idem-char</span>.) </p>
-</li>
-  <li><p><b class="bfseries">Compatibility of Green’s equivalences with multiplication.</b> </p>
-<ul class="itemize">
-  <li><p>If \(a \, \mathcal R\,  b\) then \(c a \, \mathcal R\,  c b\) for all \(c\). </p>
-</li>
-  <li><p>If \(a \, \mathcal L\,  b\) then \(a c \, \mathcal L\,  b c\) for all \(c\). </p>
-</li>
-</ul>
-<p> (Labels: <span class="ttfamily">lem:REquiv-mul-left</span>, <span class="ttfamily">lem:LEquiv-mul-right</span>.) </p>
-</li>
-  <li><p><b class="bfseries">Right-translation bijection on \(\mathcal R\)-classes.</b> If \((xy)\, \mathcal R\,  x\), then \(\rho _y:z\mapsto zy\) restricts to a bijection from the \(\mathcal R\)-class of \(x\) onto the \(\mathcal R\)-class of \(xy\). (Label: <span class="ttfamily">lem:right-translation-bijection</span>.) </p>
-</li>
-  <li><p><b class="bfseries">Surjectivity toward the \(\mathcal L\)-class of \(y\).</b> Using \((xy)\, \mathcal L\,  y\) and the previous item, find \(t\) with \(t y \, \mathcal L\,  y\) and \(t y \, \mathcal R\,  x y\). (Label: <span class="ttfamily">lem:translation-hits-Lclass</span>.) </p>
-</li>
-  <li><p><b class="bfseries">Right-stabilizer identity.</b> From \(t y \, \mathcal R\,  x y\) and \(t y \le _{\mathcal L} t\) (the latter follows from \(t y \, \mathcal L\,  y\)), obtain \(u\) with \(t y u = t\). (Label: <span class="ttfamily">lem:right-id-from-REquiv-and-LLE</span>.) </p>
-</li>
-  <li><p><b class="bfseries">Idempotence criterion.</b> If \(t y u = t\) and \(t y\) is \(\mathcal R\)-equivalent to \(x y\), then \(t^2 = t\). (Label: <span class="ttfamily">lem:idempotence-from-stabilizer</span>.) </p>
-</li>
-  <li><p><b class="bfseries">Recovering \(\mathcal L/\mathcal R\) for \(e=t\).</b> From \(t y \, \mathcal L\,  y\) build witnesses for \(t \, \mathcal R\,  y\); from \(t y \, \mathcal R\,  x y\) build witnesses for \(t \, \mathcal L\,  x\). (Labels: <span class="ttfamily">lem:from-tyL-to-eRy</span>, <span class="ttfamily">lem:from-tyR-to-eLx</span>.) </p>
-</li>
-</ul>
-<p><b class="bfseries">Remark (Dual version).</b> The left–right dual statement also holds: exchanging \(\mathcal L\) and \(\mathcal R\), the roles of left and right multiplications, and using the analogous left-translation bijection yields the dual location theorem. <em>(TODO: record as a separate proposition.)</em>  </p>
+<p><b class="bfseries">Remark (dual version).</b> Interchanging \(\mathcal L\) and \(\mathcal R\) and using left-translation bijections yields the left–right dual location theorem. <em>(To be recorded separately.)</em>  </p>
 
 </div> <!--main-text -->
 </div> <!-- content-wrapper -->

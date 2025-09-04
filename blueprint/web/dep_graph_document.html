@@ -746,6 +746,40 @@
 
 
     
+    <div class="dep-modal-container" id="lem:greens-lemma_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:greens-lemma" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">37</span><span class="lemma_thmtitle">Green’s Lemma</span></div>
+    <div class="thm_thmcontent"><p>  Let \(M\) be a monoid and let \(x,y\in M\) with \(x \, \mathcal R\,  y\). Fix \(u,v\in M\) such that \(x\cdot u = y\) and \(y\cdot v = x\). Then the right-translation </p>
+<div class="displaymath" id="a0000000039">
+  \[  \rho _u \colon M \to M, \qquad \rho _u(z) := z\cdot u,  \]
+</div>
+<p> restricts to a bijection from the \(\mathcal L\)-class of \(x\) onto the \(\mathcal L\)-class of \(y\); moreover, \(\rho _v(z):=z\cdot v\) is the inverse bijection. Additionally, these translations preserve \(\mathcal H\)-equivalence. </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#lem:greens-lemma">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="lem:HEquiv-isEquivalence_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -813,6 +847,40 @@
         
       </ul>
   </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:id-translation_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:id-translation" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">36</span><span class="lemma_thmtitle">Translation identity for \(\mathcal L\)-below elements</span></div>
+    <div class="thm_thmcontent"><p>  Let \(M\) be a monoid and suppose \(x,y\in M\) satisfy \(x \, \mathcal R\,  y\). Choose \(u,v\in M\) with \(x\cdot u = y\) and \(y\cdot v = x\). Then for every \(z\in M\) with \(z \le _{\mathcal L} x\), the map </p>
+<div class="displaymath" id="a0000000036">
+  \[  \rho _{u,v}\colon M \to M, \qquad \rho _{u,v}(t) := t\cdot u\cdot v  \]
+</div>
+<p> acts as the identity on \(z\), i.e. \(\rho _{u,v}(z) = z\). A left–right dual statement holds with left-translations and \(\mathcal R\)-below elements. </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#lem:id-translation">LaTeX</a>
+    
+    
+  
     
     
   
@@ -1314,10 +1382,10 @@
       <span class="proposition_thmcaption">
       Proposition
       </span>
-      <span class="proposition_thmlabel">36</span><span class="proposition_thmtitle">Location Theorem</span></div>
+      <span class="proposition_thmlabel">38</span><span class="proposition_thmtitle">Location Theorem</span></div>
     <div class="thm_thmcontent"><p>  For any \(x,y\in M\), the following are equivalent: </p>
-<div class="displaymath" id="a0000000035">
-  \[  \bigl(\exists \,  e\in M,\;  e^2=e,\;  e \, \mathcal L\,  x,\;  e \, \mathcal R\,  y\bigr) \quad \Longleftrightarrow \quad (xy) \, \mathcal R\,  x \; \text{ and }\;  (xy) \, \mathcal L\,  y.  \]
+<div class="displaymath" id="a0000000043">
+  \[  \bigl(\exists \,  e\in M,\;  e^2=e,\;  e \, \mathcal L\,  x,\;  e \, \mathcal R\,  y\bigr) \quad \Longleftrightarrow \quad (xy) \, \mathcal R\,  x \  \text{ and }\  (xy) \, \mathcal L\,  y.  \]
 </div>
 </div>
 
@@ -1352,7 +1420,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:RRel"	[color=green,		fillcolor="#B0ECA3",		label=RRel,		shape=box,		style=filled];	"lem:mul-decreases-all"	[color=green,		fillcolor="#1CAC78",		label="mul-decreases-all",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:mul-decreases-all"	[style=dashed];	"lem:RRel-preorder"	[color=green,		label="RRel-preorder",		shape=ellipse];	"def:RRel" -> "lem:RRel-preorder"	[style=dashed];	"lem:cancellation-all"	[color=green,		fillcolor="#1CAC78",		label="cancellation-all",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:cancellation-all"	[style=dashed];	"lem:left-mul-compat-right"	[color=green,		fillcolor="#1CAC78",		label="left-mul-compat-right",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:left-mul-compat-right"	[style=dashed];	"lem:rLE_lLE_comm"	[color=green,		fillcolor="#1CAC78",		label=rLE_lLE_comm,		shape=ellipse,		style=filled];	"def:RRel" -> "lem:rLE_lLE_comm"	[style=dashed];	"lem:RLRel-idempotent_iff"	[color=green,		fillcolor="#1CAC78",		label="RLRel-idempotent_iff",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:RLRel-idempotent_iff"	[style=dashed];	"lem:HRel-preorder"	[color=green,		label="HRel-preorder",		shape=ellipse];	"lem:RRel-preorder" -> "lem:HRel-preorder"	[style=dashed];	"lem:rEquiv_lEquiv_comm"	[color=green,		fillcolor="#1CAC78",		label=rEquiv_lEquiv_comm,		shape=ellipse,		style=filled];	"lem:rLE_lLE_comm" -> "lem:rEquiv_lEquiv_comm"	[style=dashed];	"lem:DEquiv-comm-symm"	[color=green,		fillcolor="#1CAC78",		label="DEquiv-comm-symm",		shape=ellipse,		style=filled];	"lem:rEquiv_lEquiv_comm" -> "lem:DEquiv-comm-symm"	[style=dashed];	"def:JRel"	[color=green,		fillcolor="#B0ECA3",		label=JRel,		shape=box,		style=filled];	"def:JRel" -> "lem:mul-decreases-all"	[style=dashed];	"def:JRel" -> "lem:cancellation-all"	[style=dashed];	"lem:JRel-preorder"	[color=green,		label="JRel-preorder",		shape=ellipse];	"def:JRel" -> "lem:JRel-preorder"	[style=dashed];	"def:REquiv"	[color=green,		fillcolor="#B0ECA3",		label=REquiv,		shape=box,		style=filled];	"def:REquiv" -> "lem:left-mul-compat-right"	[style=dashed];	"def:REquiv" -> "lem:rEquiv_lEquiv_comm"	[style=dashed];	"lem:REquiv-isEquivalence"	[color=green,		label="REquiv-isEquivalence",		shape=ellipse];	"def:REquiv" -> "lem:REquiv-isEquivalence"	[style=dashed];	"def:RClass"	[color=green,		fillcolor="#B0ECA3",		label=RClass,		shape=box,		style=filled];	"def:REquiv" -> "def:RClass"	[style=dashed];	"lem:DEquiv-closures"	[color=green,		fillcolor="#9CEC8B",		label="DEquiv-closures",		shape=ellipse,		style=filled];	"lem:DEquiv-comm-symm" -> "lem:DEquiv-closures"	[style=dashed];	"lem:DEquiv-trans"	[color=green,		fillcolor="#9CEC8B",		label="DEquiv-trans",		shape=ellipse,		style=filled];	"lem:DEquiv-closures" -> "lem:DEquiv-trans"	[style=dashed];	"lem:DEquiv-isEquiv"	[color=green,		fillcolor="#9CEC8B",		label="DEquiv-isEquiv",		shape=ellipse,		style=filled];	"lem:DEquiv-trans" -> "lem:DEquiv-isEquiv"	[style=dashed];	"def:DClass"	[color=green,		fillcolor="#B0ECA3",		label=DClass,		shape=box,		style=filled];	"prop:location"	[color=blue,		fillcolor="#A3D6FF",		label=location,		shape=ellipse,		style=filled];	"def:LRel"	[color=green,		fillcolor="#B0ECA3",		label=LRel,		shape=box,		style=filled];	"def:LRel" -> "lem:mul-decreases-all"	[style=dashed];	"def:LRel" -> "lem:cancellation-all"	[style=dashed];	"def:LRel" -> "lem:rLE_lLE_comm"	[style=dashed];	"def:LRel" -> "lem:RLRel-idempotent_iff"	[style=dashed];	"lem:right-mul-compat-left"	[color=green,		fillcolor="#1CAC78",		label="right-mul-compat-left",		shape=ellipse,		style=filled];	"def:LRel" -> "lem:right-mul-compat-left"	[style=dashed];	"lem:LRel-preorder"	[color=green,		label="LRel-preorder",		shape=ellipse];	"def:LRel" -> "lem:LRel-preorder"	[style=dashed];	"lem:LRel-preorder" -> "lem:HRel-preorder"	[style=dashed];	"def:HRel"	[color=green,		fillcolor="#B0ECA3",		label=HRel,		shape=box,		style=filled];	"def:HRel" -> "lem:HRel-preorder"	[style=dashed];	"def:JClass"	[color=green,		fillcolor="#B0ECA3",		label=JClass,		shape=box,		style=filled];	"lem:EquivOfLE-isEquivalence"	[color=green,		fillcolor="#1CAC78",		label="EquivOfLE-isEquivalence",		shape=ellipse,		style=filled];	"lem:EquivOfLE-isEquivalence" -> "lem:REquiv-isEquivalence"	[style=dashed];	"lem:LEquiv-isEquivalence"	[color=green,		label="LEquiv-isEquivalence",		shape=ellipse];	"lem:EquivOfLE-isEquivalence" -> "lem:LEquiv-isEquivalence"	[style=dashed];	"lem:JEquiv-isEquivalence"	[color=green,		label="JEquiv-isEquivalence",		shape=ellipse];	"lem:EquivOfLE-isEquivalence" -> "lem:JEquiv-isEquivalence"	[style=dashed];	"lem:HEquiv-isEquivalence"	[color=green,		label="HEquiv-isEquivalence",		shape=ellipse];	"lem:EquivOfLE-isEquivalence" -> "lem:HEquiv-isEquivalence"	[style=dashed];	"lem:LEquiv-isEquivalence" -> "lem:DEquiv-closures"	[style=dashed];	"def:LClass"	[color=green,		fillcolor="#B0ECA3",		label=LClass,		shape=box,		style=filled];	"def:EquivOfLE"	[color=green,		fillcolor="#B0ECA3",		label=EquivOfLE,		shape=box,		style=filled];	"def:EquivOfLE" -> "lem:EquivOfLE-isEquivalence"	[style=dashed];	"def:JEquiv"	[color=green,		fillcolor="#B0ECA3",		label=JEquiv,		shape=box,		style=filled];	"def:JEquiv" -> "def:JClass"	[style=dashed];	"def:JEquiv" -> "lem:JEquiv-isEquivalence"	[style=dashed];	"def:HEquiv"	[color=green,		fillcolor="#B0ECA3",		label=HEquiv,		shape=box,		style=filled];	"def:HEquiv" -> "lem:HEquiv-isEquivalence"	[style=dashed];	"def:HClass"	[color=green,		fillcolor="#B0ECA3",		label=HClass,		shape=box,		style=filled];	"def:HEquiv" -> "def:HClass"	[style=dashed];	"def:DEquiv"	[color=green,		fillcolor="#B0ECA3",		label=DEquiv,		shape=box,		style=filled];	"def:DEquiv" -> "lem:DEquiv-comm-symm"	[style=dashed];	"def:DEquiv" -> "def:DClass"	[style=dashed];	"def:LEquiv"	[color=green,		fillcolor="#B0ECA3",		label=LEquiv,		shape=box,		style=filled];	"def:LEquiv" -> "lem:rEquiv_lEquiv_comm"	[style=dashed];	"def:LEquiv" -> "lem:right-mul-compat-left"	[style=dashed];	"def:LEquiv" -> "lem:LEquiv-isEquivalence"	[style=dashed];	"def:LEquiv" -> "def:LClass"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:RRel"	[color=green,		fillcolor="#B0ECA3",		label=RRel,		shape=box,		style=filled];	"lem:mul-decreases-all"	[color=green,		fillcolor="#1CAC78",		label="mul-decreases-all",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:mul-decreases-all"	[style=dashed];	"lem:RRel-preorder"	[color=green,		label="RRel-preorder",		shape=ellipse];	"def:RRel" -> "lem:RRel-preorder"	[style=dashed];	"lem:cancellation-all"	[color=green,		fillcolor="#1CAC78",		label="cancellation-all",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:cancellation-all"	[style=dashed];	"lem:left-mul-compat-right"	[color=green,		fillcolor="#1CAC78",		label="left-mul-compat-right",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:left-mul-compat-right"	[style=dashed];	"lem:rLE_lLE_comm"	[color=green,		fillcolor="#1CAC78",		label=rLE_lLE_comm,		shape=ellipse,		style=filled];	"def:RRel" -> "lem:rLE_lLE_comm"	[style=dashed];	"lem:RLRel-idempotent_iff"	[color=green,		fillcolor="#1CAC78",		label="RLRel-idempotent_iff",		shape=ellipse,		style=filled];	"def:RRel" -> "lem:RLRel-idempotent_iff"	[style=dashed];	"lem:HRel-preorder"	[color=green,		label="HRel-preorder",		shape=ellipse];	"lem:RRel-preorder" -> "lem:HRel-preorder"	[style=dashed];	"lem:rEquiv_lEquiv_comm"	[color=green,		fillcolor="#1CAC78",		label=rEquiv_lEquiv_comm,		shape=ellipse,		style=filled];	"lem:rLE_lLE_comm" -> "lem:rEquiv_lEquiv_comm"	[style=dashed];	"lem:DEquiv-comm-symm"	[color=green,		fillcolor="#1CAC78",		label="DEquiv-comm-symm",		shape=ellipse,		style=filled];	"lem:rEquiv_lEquiv_comm" -> "lem:DEquiv-comm-symm"	[style=dashed];	"def:JRel"	[color=green,		fillcolor="#B0ECA3",		label=JRel,		shape=box,		style=filled];	"def:JRel" -> "lem:mul-decreases-all"	[style=dashed];	"def:JRel" -> "lem:cancellation-all"	[style=dashed];	"lem:JRel-preorder"	[color=green,		label="JRel-preorder",		shape=ellipse];	"def:JRel" -> "lem:JRel-preorder"	[style=dashed];	"def:REquiv"	[color=green,		fillcolor="#B0ECA3",		label=REquiv,		shape=box,		style=filled];	"def:REquiv" -> "lem:left-mul-compat-right"	[style=dashed];	"def:REquiv" -> "lem:rEquiv_lEquiv_comm"	[style=dashed];	"lem:REquiv-isEquivalence"	[color=green,		label="REquiv-isEquivalence",		shape=ellipse];	"def:REquiv" -> "lem:REquiv-isEquivalence"	[style=dashed];	"def:RClass"	[color=green,		fillcolor="#B0ECA3",		label=RClass,		shape=box,		style=filled];	"def:REquiv" -> "def:RClass"	[style=dashed];	"lem:DEquiv-closures"	[color=green,		fillcolor="#9CEC8B",		label="DEquiv-closures",		shape=ellipse,		style=filled];	"lem:DEquiv-comm-symm" -> "lem:DEquiv-closures"	[style=dashed];	"lem:DEquiv-trans"	[color=green,		fillcolor="#9CEC8B",		label="DEquiv-trans",		shape=ellipse,		style=filled];	"lem:DEquiv-closures" -> "lem:DEquiv-trans"	[style=dashed];	"lem:DEquiv-isEquiv"	[color=green,		fillcolor="#9CEC8B",		label="DEquiv-isEquiv",		shape=ellipse,		style=filled];	"lem:DEquiv-trans" -> "lem:DEquiv-isEquiv"	[style=dashed];	"def:DClass"	[color=green,		fillcolor="#B0ECA3",		label=DClass,		shape=box,		style=filled];	"lem:greens-lemma"	[color=blue,		fillcolor="#A3D6FF",		label="greens-lemma",		shape=ellipse,		style=filled];	"prop:location"	[color=blue,		fillcolor="#A3D6FF",		label=location,		shape=ellipse,		style=filled];	"def:LRel"	[color=green,		fillcolor="#B0ECA3",		label=LRel,		shape=box,		style=filled];	"def:LRel" -> "lem:mul-decreases-all"	[style=dashed];	"def:LRel" -> "lem:cancellation-all"	[style=dashed];	"def:LRel" -> "lem:rLE_lLE_comm"	[style=dashed];	"def:LRel" -> "lem:RLRel-idempotent_iff"	[style=dashed];	"lem:right-mul-compat-left"	[color=green,		fillcolor="#1CAC78",		label="right-mul-compat-left",		shape=ellipse,		style=filled];	"def:LRel" -> "lem:right-mul-compat-left"	[style=dashed];	"lem:LRel-preorder"	[color=green,		label="LRel-preorder",		shape=ellipse];	"def:LRel" -> "lem:LRel-preorder"	[style=dashed];	"lem:LRel-preorder" -> "lem:HRel-preorder"	[style=dashed];	"def:HRel"	[color=green,		fillcolor="#B0ECA3",		label=HRel,		shape=box,		style=filled];	"def:HRel" -> "lem:HRel-preorder"	[style=dashed];	"def:JClass"	[color=green,		fillcolor="#B0ECA3",		label=JClass,		shape=box,		style=filled];	"lem:EquivOfLE-isEquivalence"	[color=green,		fillcolor="#1CAC78",		label="EquivOfLE-isEquivalence",		shape=ellipse,		style=filled];	"lem:EquivOfLE-isEquivalence" -> "lem:REquiv-isEquivalence"	[style=dashed];	"lem:LEquiv-isEquivalence"	[color=green,		label="LEquiv-isEquivalence",		shape=ellipse];	"lem:EquivOfLE-isEquivalence" -> "lem:LEquiv-isEquivalence"	[style=dashed];	"lem:JEquiv-isEquivalence"	[color=green,		label="JEquiv-isEquivalence",		shape=ellipse];	"lem:EquivOfLE-isEquivalence" -> "lem:JEquiv-isEquivalence"	[style=dashed];	"lem:HEquiv-isEquivalence"	[color=green,		label="HEquiv-isEquivalence",		shape=ellipse];	"lem:EquivOfLE-isEquivalence" -> "lem:HEquiv-isEquivalence"	[style=dashed];	"lem:LEquiv-isEquivalence" -> "lem:DEquiv-closures"	[style=dashed];	"lem:id-translation"	[color=blue,		fillcolor="#A3D6FF",		label="id-translation",		shape=ellipse,		style=filled];	"def:LClass"	[color=green,		fillcolor="#B0ECA3",		label=LClass,		shape=box,		style=filled];	"def:EquivOfLE"	[color=green,		fillcolor="#B0ECA3",		label=EquivOfLE,		shape=box,		style=filled];	"def:EquivOfLE" -> "lem:EquivOfLE-isEquivalence"	[style=dashed];	"def:JEquiv"	[color=green,		fillcolor="#B0ECA3",		label=JEquiv,		shape=box,		style=filled];	"def:JEquiv" -> "def:JClass"	[style=dashed];	"def:JEquiv" -> "lem:JEquiv-isEquivalence"	[style=dashed];	"def:HEquiv"	[color=green,		fillcolor="#B0ECA3",		label=HEquiv,		shape=box,		style=filled];	"def:HEquiv" -> "lem:HEquiv-isEquivalence"	[style=dashed];	"def:HClass"	[color=green,		fillcolor="#B0ECA3",		label=HClass,		shape=box,		style=filled];	"def:HEquiv" -> "def:HClass"	[style=dashed];	"def:DEquiv"	[color=green,		fillcolor="#B0ECA3",		label=DEquiv,		shape=box,		style=filled];	"def:DEquiv" -> "lem:DEquiv-comm-symm"	[style=dashed];	"def:DEquiv" -> "def:DClass"	[style=dashed];	"def:LEquiv"	[color=green,		fillcolor="#B0ECA3",		label=LEquiv,		shape=box,		style=filled];	"def:LEquiv" -> "lem:rEquiv_lEquiv_comm"	[style=dashed];	"def:LEquiv" -> "lem:right-mul-compat-left"	[style=dashed];	"def:LEquiv" -> "lem:LEquiv-isEquivalence"	[style=dashed];	"def:LEquiv" -> "def:LClass"	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

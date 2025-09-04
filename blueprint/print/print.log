@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.8.16)  3 SEP 2025 18:55
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.8.16)  4 SEP 2025 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -800,26 +800,25 @@ nput line 59.
 ) (./LaTeX/GreensRelations/DEquiv.tex [5])
 (./LaTeX/GreensRelations/EquivClass.tex [6]) [7]
 Chapter 2.
-(./LaTeX/Location.tex [8
+(./LaTeX/Location.tex
 
-]
-Overfull \hbox (32.47136pt too wide) in paragraph at lines 69--72
-\TU/lmr/m/n/10 jection from the $[]$-class of $[]$ onto the $[]$-class of $[][]
-$. (Label: \TU/lmtt/m/n/10 lem:right-translation-bijection\TU/lmr/m/n/10 .) 
- []
+Package amsthm Warning: The \qedhere command may not work correctly here on inp
+ut line 23.
 
-)) [9] (/workspaces/LeanblueprintTesting/blueprint/print/print.aux)
+[8
+
+])) [9] (/workspaces/LeanblueprintTesting/blueprint/print/print.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `print.out' has not changed.
-(rerunfilecheck)             Checksum: 3289699F15C2880FCDF27B769E5A1C7D;1779.
+(rerunfilecheck)             Checksum: 7EBDC37B391F720277E04257E27C5E87;1905.
  ) 
 Here is how much of TeX's memory you used:
- 16680 strings out of 478190
- 311241 string characters out of 5854827
+ 16682 strings out of 478190
+ 311279 string characters out of 5854827
  814831 words of memory out of 5000000
- 37035 multiletter control sequences out of 15000+600000
+ 37037 multiletter control sequences out of 15000+600000
  475639 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,115p,845b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
